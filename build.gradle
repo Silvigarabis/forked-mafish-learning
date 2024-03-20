@@ -16,7 +16,6 @@ repositories {
    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
    // for more information about repositories.
-
    maven {
       url = "https://cursemaven.com"
    }
@@ -31,13 +30,12 @@ repositories {
    */
 }
 
-fabricApi {
-   configureDataGeneration()
+loom {
+   accessWidenerPath = file("src/main/resources/${project.fabric_mod_id}.accesswidener")
 }
 
-loom {
-   // accessWidenerPath = file("src/main/resources/forked-.accesswidener")
-   accessWidenerPath = file("src/main/resources/name.accesswidener")
+fabricApi {
+   configureDataGeneration()
 }
 
 dependencies {
@@ -70,9 +68,11 @@ dependencies {
 }
 
 processResources {
+   inputs.property "fabricmod_id", project.fabric_mod_id
    inputs.property "version", project.version
 
    filesMatching("fabric.mod.json") {
+      expand "fabricmod_id": project.fabric_mod_id
       expand "version": project.version
    }
 }
