@@ -1,16 +1,14 @@
 package me.silvigarabis.mafuyu33.mafishslearning.item;
 
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+
 import me.silvigarabis.mafuyu33.mafishslearning.item.custom.*;
+import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.*;
 import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
 import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.LOGGER;
-import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.VrCompassesItem;
-import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.VrPenItem;
-import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.VrRubberItem;
-import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.VrRulerItem;
+
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -91,6 +89,7 @@ public class ModItems {
     public static final Item VR_RUBBER = registerItem("vr_rubber", new VrRubberItem(new FabricItemSettings().maxCount(1)));
     public static final Item VR_RULER = registerItem("vr_ruler", new VrRulerItem(new FabricItemSettings().maxCount(1)));
     public static final Item VR_COMPASSES = registerItem("vr_compasses", new VrCompassesItem(new FabricItemSettings().maxCount(1)));
+    public static final Item VR_MAGIC = registerItem("vr_magic", new VrMagicItem(new FabricItemSettings().maxCount(1)));
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries){

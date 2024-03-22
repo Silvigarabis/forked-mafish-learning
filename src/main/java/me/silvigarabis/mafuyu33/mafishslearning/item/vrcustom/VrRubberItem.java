@@ -7,8 +7,10 @@ import static me.silvigarabis.mafuyu33.mafishslearning.VRPlugin.getVRAPI;
 import me.silvigarabis.mafuyu33.mafishslearning.mixinhelper.VrRubberItemHelper;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ModParticles;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ParticleStorage;
+import me.silvigarabis.mafuyu33.mafishslearning.item.ModItems;
 
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.client.world.ClientWorld;
@@ -24,6 +26,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -48,7 +51,7 @@ public class VrRubberItem extends Item {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
         if(entity instanceof PlayerEntity player) {
-            if (VRPlugin.isClientInVr() && getVRAPI().apiActive((player))) {
+            if (VRPlugin.isPlayerInVR(player)) {//vr
                 if (VrRubberItem.isErasing) {
                     Vec3d pos = VRPlugin.getControllerPosition(player, 0);
                     double size = (player.getOffHandStack().getCount())*0.025+0.05;
@@ -58,7 +61,7 @@ public class VrRubberItem extends Item {
                     );
                     collisionBoxRenderer(userbox,size);
                 }
-            } else {
+            }else{//非vr
                 if (VrRubberItem.isErasing) {
                     Vec3d lookVec = player.getRotationVector();
                     double distance = 1d;
@@ -119,5 +122,11 @@ public class VrRubberItem extends Item {
                 world.addParticle(ModParticles.RUBBER_PARTICLE,true, point.x, point.y, point.z, 0, 1, 0);
             }
         }
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.translatable("tooltip.tutorialmod.vr_rubber.tooltip"));
+        super.appendTooltip(stack, world, tooltip, context);
     }
 }

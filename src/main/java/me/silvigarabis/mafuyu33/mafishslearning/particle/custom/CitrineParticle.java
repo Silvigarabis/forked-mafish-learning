@@ -2,6 +2,7 @@ package me.silvigarabis.mafuyu33.mafishslearning.particle.custom;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import me.silvigarabis.mafuyu33.mafishslearning.item.ModItems;
 import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.VrRubberItem;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ParticleStorage;
 import net.minecraft.client.MinecraftClient;
@@ -51,6 +52,10 @@ public class CitrineParticle extends SpriteBillboardParticle {
                         this.markDead();
                         ParticleStorage.getOrCreateForWorld().removeParticleAtPosition(new Vec3d(this.x, this.y, this.z));
                     }
+                }
+                if(VrRubberItem.isErasing && player.getOffHandStack().getItem()== ModItems.RUBY){
+                    this.markDead();
+                    ParticleStorage.getOrCreateForWorld().clearAll();
                 }
             }
         }

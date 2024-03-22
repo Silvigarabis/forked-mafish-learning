@@ -69,9 +69,9 @@ public abstract class LeadItemMovementMixin extends MobEntity {
             && entity instanceof PlayerEntity player
             && getVRAPI().playerInVR(player)
          ){
-            forceSimulate(f, entity, 6.0F);
-         } else {
             forceSimulate(f, entity, 15.0F);
+         } else {
+            forceSimulate(f, entity, 6.0F);
          }
 
          //VR lead modification section. VR拴绳改造部分

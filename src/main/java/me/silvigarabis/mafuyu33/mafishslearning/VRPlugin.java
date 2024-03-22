@@ -1,14 +1,18 @@
 package me.silvigarabis.mafuyu33.mafishslearning;
 
+import net.blf02.vrapi.api.data.IVRPlayer;
 import net.blf02.vrapi.api.IVRAPI;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
 
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.MinecraftClient;
 
+import java.util.function.Function;
+import java.util.function.Consumer;
 import java.util.List;
 
 public class VRPlugin {
@@ -16,6 +20,7 @@ public class VRPlugin {
    public static IVRAPI getVRAPI(){
       return vrApi;
    }
+
    public static boolean init(){
       if (vrApi != null){
          return true;
@@ -26,6 +31,33 @@ public class VRPlugin {
          vrApi = entrypointList.get(0).getEntrypoint();
       return vrApi != null;
    }
+
+   public static boolean isApiActive(Entity entity){
+      if (entity instanceof PlayerEntity player){
+         return isApiActive(player);
+      }
+      return false;
+   }
+   public static boolean isApiActive(PlayerEntity player){
+      return vrApi != null && vrApi.apiActive(player);
+   }
+   public static boolean runIfApiActive(PlayerEntity player, Consumer<IVRPlayer> fn){
+      if (vrApi != null && vrApi.apiActive(player)){
+         fn.accept(vrApi.getVRPlayer(player));
+         return true;
+      }
+      return false;
+   }
+   public static <R> R getIfApiActive(PlayerEntity player, Function<IVRPlayer, R> fn){
+      if (vrApi != null && vrApi.apiActive(player)){
+         return fn.apply(vrApi.getVRPlayer(player));
+      }
+      return null;
+   }
+   public static boolean isPlayerInVR(PlayerEntity player){
+      return vrApi != null && vrApi.playerInVR(player);
+   }
+
    public static boolean isClientInVr(){
       if (vrApi != null){
          return false;
@@ -34,31 +66,27 @@ public class VRPlugin {
       if (clientPlayer == null){
          return true; // so strange...
       }
-      return vrApi.playerInVR(clientPlayer);
+      return isPlayerInVR(clientPlayer);
    }
-   public static Vec3d getControllerPosition(PlayerEntity player, int controllerIndex){
-      if (vrApi == null){
-         return null;
-      }
-      if (vrApi.apiActive(player)){
-         return vrApi.getVRPlayer(player).getController(controllerIndex).position();
-      }
-      return null;
-   }
+
    public static Vec3d getMainhandControllerPosition(PlayerEntity player){
       return getControllerPosition(player, 0);
    }
    public static Vec3d getOffhandControllerPosition(PlayerEntity player){
       return getControllerPosition(player, 1);
    }
+
+   public static Vec3d getControllerPosition(PlayerEntity player, int controllerIndex){
+      return getIfApiActive(player, vrplayer -> vrplayer.getController(controllerIndex).position());
+   }
    public static Vec3d getHMDPosition(PlayerEntity player){
-      if (vrApi == null){
-         return null;
-      }
-      if (vrApi.apiActive(player)){
-         return vrApi.getVRPlayer(player).getHMD().position();
-      }
-      return null;
+      return getIfApiActive(player, vrplayer -> vrplayer.getHMD().position());
+   }
+   public static Vec3d getControllerLookAngle(PlayerEntity player, int controllerIndex) {
+      return getIfApiActive(player, vrplayer -> vrplayer.getController(controllerIndex).getLookAngle());
+   }
+   public static float getControllerRoll(PlayerEntity player, int controllerIndex) {
+      return getIfApiActive(player, vrplayer -> vrplayer.getController(controllerIndex).getRoll());
    }
 }
 
@@ -71,6 +99,32 @@ if (world.isClient && VRPluginVerify.hasAPI && VRPlugin.API.playerInVR(user)) { 
 }
 or
  if (world.isClient && VRPluginVerify.clientInVR() && VRPlugin.API.apiActive(Minecraft.getInstance().player)
+
+
+
+两点之间绘制粒子
+private void generateParticles(World world, Vec3d particlePosition, Vec3d lastParticlePosition) {
+    if (lastParticlePosition != null) {
+        double distance = particlePosition.distanceTo(lastParticlePosition);
+        int density = 40; // 设置粒子密度，可以根据需要调整
+        int numParticles = (int) (density * distance);
+        if(numParticles<=0){
+            numParticles=1;
+        }
+        Vec3d direction = particlePosition.subtract(lastParticlePosition).normalize();
+        for (int i = 1; i <= numParticles; i++) {
+            double ratio = (double) i / numParticles;
+            double x = lastParticlePosition.x + ratio * distance * direction.x;
+            double y = lastParticlePosition.y + ratio * distance * direction.y;
+            double z = lastParticlePosition.z + ratio * distance * direction.z;
+            world.addParticle(ModParticles.CITRINE_PARTICLE, true, x, y, z, red, green, blue);
+            ParticleStorage.getOrCreateForWorld().addParticle(new Vec3d(x, y, z), red, green, blue);
+        }
+    } else {
+        world.addParticle(ModParticles.CITRINE_PARTICLE, true, particlePosition.x, particlePosition.y, particlePosition.z, red, green, blue);
+        ParticleStorage.getOrCreateForWorld().addParticle(particlePosition, red, green, blue);
+    }
+}
 
 
 获取VR玩家信息
