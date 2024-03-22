@@ -20,9 +20,6 @@
       ],
       "client": [
          "me.silvigarabis.mafuyu33.mafishslearning.TutorialModClient"
-      ],
-      "fabric-datagen": [
-         "me.silvigarabis.mafuyu33.mafishslearning.TutorialModDataGenerator"
       ]
    },
    "mixins": [
