@@ -13,14 +13,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(FireworkRocketEntity.class)
 public abstract class FireworkRocketEntityMixin {
-	@Inject(method = "onEntityHit", at = @At("HEAD"))
-	private void init(EntityHitResult entityHitResult, CallbackInfo ci) {
-		Entity entity = entityHitResult.getEntity();
+   @Inject(method = "onEntityHit", at = @At("HEAD"))
+   private void init(EntityHitResult entityHitResult, CallbackInfo ci) {
+      Entity entity = entityHitResult.getEntity();
 
-		FireworkRocketEntityMixinHelper.storeEntityValue(entity.getId(),5);
+      FireworkRocketEntityMixinHelper.storeEntityValue(entity.getId(),5);
 
 
 //        FireworkRocketEntityMixinHelper.setEntity(entity);//获取这个实体
 //        FireworkRocketEntityMixinHelper.setValue(5);//设置循环次数
-	}
+   }
 }

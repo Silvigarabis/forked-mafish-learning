@@ -23,30 +23,30 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class LeadItemMixin extends Item {
 
 
-	public LeadItemMixin(Settings settings) {
-		super(settings);
-	}
+   public LeadItemMixin(Settings settings) {
+      super(settings);
+   }
 
-	@Override
-	public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
-		if (entity instanceof MobEntity) {
-			MobEntity target = (MobEntity) entity;
-			return attachHeldMobsToMob(user, target);
-		}
-		return ActionResult.PASS;
-	}
+   @Override
+   public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
+      if (entity instanceof MobEntity) {
+         MobEntity target = (MobEntity) entity;
+         return attachHeldMobsToMob(user, target);
+      }
+      return ActionResult.PASS;
+   }
 
-	@Unique
-	private static ActionResult attachHeldMobsToMob(PlayerEntity player, MobEntity target) {
-		World world = target.getWorld();
-		BlockPos targetPos = target.getBlockPos();
-		LeashKnotEntity leashKnotEntity = LeashKnotEntity.getOrCreate(world, targetPos);
-		leashKnotEntity.onPlace();
+   @Unique
+   private static ActionResult attachHeldMobsToMob(PlayerEntity player, MobEntity target) {
+      World world = target.getWorld();
+      BlockPos targetPos = target.getBlockPos();
+      LeashKnotEntity leashKnotEntity = LeashKnotEntity.getOrCreate(world, targetPos);
+      leashKnotEntity.onPlace();
 
-		target.attachLeash(leashKnotEntity, true);
+      target.attachLeash(leashKnotEntity, true);
 
-		world.emitGameEvent(GameEvent.ENTITY_PLACE, targetPos, GameEvent.Emitter.of(player));
+      world.emitGameEvent(GameEvent.ENTITY_PLACE, targetPos, GameEvent.Emitter.of(player));
 
-		return ActionResult.SUCCESS;
-	}
+      return ActionResult.SUCCESS;
+   }
 }

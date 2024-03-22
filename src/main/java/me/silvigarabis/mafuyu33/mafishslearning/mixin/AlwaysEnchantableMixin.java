@@ -7,14 +7,14 @@ import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(Enchantment.class)
 public class AlwaysEnchantableMixin {
-	/**
-	 * @author
-	 * Mafuyu33
-	 * @reason
-	 * Always Enchantable.
-	 */
-	@Overwrite
-	public boolean isAcceptableItem(ItemStack stack) {
-		return true;
-	}
+   /**
+    * @author
+    * Mafuyu33
+    * @reason
+    * Always Enchantable.
+    */
+   @Overwrite
+   public boolean isAcceptableItem(ItemStack stack) {
+      return true;
+   }
 }

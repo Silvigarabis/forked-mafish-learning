@@ -22,50 +22,50 @@ import java.util.List;
 
 @Mixin(BellBlockEntity.class)
 public abstract class BellBlockEntityMixin extends BlockEntity {
-	public BellBlockEntityMixin(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-		super(type, pos, state);
-	}
+   public BellBlockEntityMixin(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+      super(type, pos, state);
+   }
 
-	@Shadow private List<LivingEntity> hearingEntities;
+   @Shadow private List<LivingEntity> hearingEntities;
 
-	@Inject(at = @At("TAIL"), method = "notifyMemoriesOfBell")
-	private void init1(CallbackInfo ci) {
-		int k = BlockEnchantmentHelper.getLevel(Enchantments.IMPALING,pos);
-		int j = BlockEnchantmentHelper.getLevel(Enchantments.KNOCKBACK,pos);
-		GameOptions gameOptions = MinecraftClient.getInstance().options;
-		float blockVolume = gameOptions.getSoundVolume(SoundCategory.BLOCKS);
-		float masterVolume = gameOptions.getSoundVolume(SoundCategory.MASTER);
+   @Inject(at = @At("TAIL"), method = "notifyMemoriesOfBell")
+   private void init1(CallbackInfo ci) {
+      int k = BlockEnchantmentHelper.getLevel(Enchantments.IMPALING,pos);
+      int j = BlockEnchantmentHelper.getLevel(Enchantments.KNOCKBACK,pos);
+      GameOptions gameOptions = MinecraftClient.getInstance().options;
+      float blockVolume = gameOptions.getSoundVolume(SoundCategory.BLOCKS);
+      float masterVolume = gameOptions.getSoundVolume(SoundCategory.MASTER);
 
 
-		if (!this.world.isClient && k > 0) {//穿刺
-			for (LivingEntity livingEntity : this.hearingEntities) {
-				if(!livingEntity.isPlayer()) {
-					if (livingEntity.isAlive() && !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)) {
-						livingEntity.damage(livingEntity.getDamageSources().magic(), k);
-					}
-				}else if(masterVolume > 0.0f && blockVolume > 0.0f && livingEntity.isAlive()
-						&& !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)){
-					livingEntity.damage(livingEntity.getDamageSources().magic(), k);
-				}
-			}
-		}
-		if (j > 0) {//击退
-			for (LivingEntity livingEntity : this.hearingEntities) {
-				if(!livingEntity.isPlayer() && !this.world.isClient) {
-					if (livingEntity.isAlive() && !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)) {
-						// 获取 pos 指向 livingEntity 的方向向量
-						Vec3d direction = livingEntity.getPos().subtract(pos.getX(), pos.getY(), pos.getZ()).normalize();
-						// 施加一个击退效果
-						livingEntity.addVelocity(direction.x * j, 0.5, direction.z * j);
-					}
-				}else if(masterVolume > 0.0f && blockVolume > 0.0f && livingEntity.isAlive()
-						&& !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)){
-					// 获取 pos 指向 livingEntity 的方向向量
-					Vec3d direction = livingEntity.getPos().subtract(pos.getX(), pos.getY(), pos.getZ()).normalize();
-					// 施加一个击退效果
-					livingEntity.addVelocity(direction.x * j, 0.5, direction.z * j);
-				}
-			}
-		}
-	}
+      if (!this.world.isClient && k > 0) {//穿刺
+         for (LivingEntity livingEntity : this.hearingEntities) {
+            if(!livingEntity.isPlayer()) {
+               if (livingEntity.isAlive() && !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)) {
+                  livingEntity.damage(livingEntity.getDamageSources().magic(), k);
+               }
+            }else if(masterVolume > 0.0f && blockVolume > 0.0f && livingEntity.isAlive()
+                  && !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)){
+               livingEntity.damage(livingEntity.getDamageSources().magic(), k);
+            }
+         }
+      }
+      if (j > 0) {//击退
+         for (LivingEntity livingEntity : this.hearingEntities) {
+            if(!livingEntity.isPlayer() && !this.world.isClient) {
+               if (livingEntity.isAlive() && !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)) {
+                  // 获取 pos 指向 livingEntity 的方向向量
+                  Vec3d direction = livingEntity.getPos().subtract(pos.getX(), pos.getY(), pos.getZ()).normalize();
+                  // 施加一个击退效果
+                  livingEntity.addVelocity(direction.x * j, 0.5, direction.z * j);
+               }
+            }else if(masterVolume > 0.0f && blockVolume > 0.0f && livingEntity.isAlive()
+                  && !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)){
+               // 获取 pos 指向 livingEntity 的方向向量
+               Vec3d direction = livingEntity.getPos().subtract(pos.getX(), pos.getY(), pos.getZ()).normalize();
+               // 施加一个击退效果
+               livingEntity.addVelocity(direction.x * j, 0.5, direction.z * j);
+            }
+         }
+      }
+   }
 }

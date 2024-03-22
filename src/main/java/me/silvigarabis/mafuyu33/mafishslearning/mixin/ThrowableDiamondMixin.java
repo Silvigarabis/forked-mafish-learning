@@ -21,29 +21,29 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Item.class)
 public class ThrowableDiamondMixin implements FabricItem{
-	@Inject(at = @At("HEAD"), method = "use")
-	private void init(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
+   @Inject(at = @At("HEAD"), method = "use")
+   private void init(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
 
-		ItemStack itemStack = user.getStackInHand(hand);
-		if (itemStack.getItem() == Items.DIAMOND) {
+      ItemStack itemStack = user.getStackInHand(hand);
+      if (itemStack.getItem() == Items.DIAMOND) {
 
-			float throwPower = KeyInputHandler.getThrowPower();//获取当前的投掷力度
+         float throwPower = KeyInputHandler.getThrowPower();//获取当前的投掷力度
 
-			world.playSound(null, user.getX(), user.getY(), user.getZ(),
-					SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
+         world.playSound(null, user.getX(), user.getY(), user.getZ(),
+               SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
 
-			if (!world.isClient) {
-				DiamondProjectileEntity diamondProjectileEntity = new DiamondProjectileEntity(user, world);
-				diamondProjectileEntity.setItem(itemStack);
-				diamondProjectileEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, throwPower, 1.0f);
-				world.spawnEntity(diamondProjectileEntity);
-			}
+         if (!world.isClient) {
+            DiamondProjectileEntity diamondProjectileEntity = new DiamondProjectileEntity(user, world);
+            diamondProjectileEntity.setItem(itemStack);
+            diamondProjectileEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, throwPower, 1.0f);
+            world.spawnEntity(diamondProjectileEntity);
+         }
 
-			user.incrementStat(Stats.USED.getOrCreateStat(itemStack.getItem()));
-			if (!user.getAbilities().creativeMode) {
-				itemStack.decrement(1);
-			}
-		}
-	}
+         user.incrementStat(Stats.USED.getOrCreateStat(itemStack.getItem()));
+         if (!user.getAbilities().creativeMode) {
+            itemStack.decrement(1);
+         }
+      }
+   }
 }
 

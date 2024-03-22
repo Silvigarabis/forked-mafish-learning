@@ -24,32 +24,32 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class MafishsLearningMod implements ModInitializer {
-	public static final String MOD_ID = "tutorialmod";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+   public static final String MOD_ID = "tutorialmod";
+   public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	private static boolean vrSupported = false;
-	public static boolean isVrSupported(){
-		return vrSupported;
-	}
+   private static boolean vrSupported = false;
+   public static boolean isVrSupported(){
+      return vrSupported;
+   }
 
-	@Override
-	public void onInitialize() {
-		ModItems.registerModItems();
-		ModItemGroups.registerItemGroups();
-		ModBlocks.registerModBlocks();
-		ModBlockEntities.registerBlockEntities();
-		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUEITE,200);
-		ModStatusEffects.registerModEffect();
-		ModPotions.registerPotions();
-		ModLootTableModifiers.modifyLootTables();
-		ModVillagers.registerVillagers();
-		ModSounds.registerSounds();
-		ModCustomTrades.registerCustomTrades();
-		ModEnchantments.registerModEnchantments();
-		ModPotions.registerBrewingRecipes();
-		AttackEntityCallback.EVENT.register(new AttackEntityHandler());
-		ModMessages.registerC2SPackets();
-		ModParticles.registerParticles();
-		vrSupported = VRPlugin.init();
-	}
+   @Override
+   public void onInitialize() {
+      ModItems.registerModItems();
+      ModItemGroups.registerItemGroups();
+      ModBlocks.registerModBlocks();
+      ModBlockEntities.registerBlockEntities();
+      FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUEITE,200);
+      ModStatusEffects.registerModEffect();
+      ModPotions.registerPotions();
+      ModLootTableModifiers.modifyLootTables();
+      ModVillagers.registerVillagers();
+      ModSounds.registerSounds();
+      ModCustomTrades.registerCustomTrades();
+      ModEnchantments.registerModEnchantments();
+      ModPotions.registerBrewingRecipes();
+      AttackEntityCallback.EVENT.register(new AttackEntityHandler());
+      ModMessages.registerC2SPackets();
+      ModParticles.registerParticles();
+      vrSupported = VRPlugin.init();
+   }
 }
