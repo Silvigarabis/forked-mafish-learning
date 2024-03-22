@@ -72,7 +72,7 @@ public abstract class InfiniteUndyingMixin extends Entity implements Attackable{
      * Change the totem of undying code
      */
     @Overwrite
-    public /* so strange... */ boolean tryUseTotem(DamageSource source) {
+    private boolean tryUseTotem(DamageSource source) {
 
         Entity attacker = source.getAttacker();
         Entity user= source.getSource();
