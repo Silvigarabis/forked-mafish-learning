@@ -1,11 +1,13 @@
 package me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom;
 
-import net.blf02.vrapi.api.IVRAPI;
+import me.silvigarabis.mafuyu33.mafishslearning.VRPlugin;
+import static me.silvigarabis.mafuyu33.mafishslearning.TutorialMod.isVrSupported;
+import static me.silvigarabis.mafuyu33.mafishslearning.VRPlugin.getVRAPI;
+
 import me.silvigarabis.mafuyu33.mafishslearning.mixinhelper.VrRubberItemHelper;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ModParticles;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ParticleStorage;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPlugin;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPluginVerify;
+
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleManager;
@@ -46,9 +48,9 @@ public class VrRubberItem extends Item {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
         if(entity instanceof PlayerEntity player) {
-            if (VRPluginVerify.clientInVR() && VRPlugin.API.apiActive((player))) {
+            if (VRPlugin.isClientInVr() && getVRAPI().apiActive((player))) {
                 if (VrRubberItem.isErasing) {
-                    Vec3d pos = getControllerPosition(player, 0);
+                    Vec3d pos = VRPlugin.getControllerPosition(player, 0);
                     double size = (player.getOffHandStack().getCount())*0.025+0.05;
                     userbox = new Box(
                             pos.x - size / 2.0, pos.y - size / 2.0, pos.z - size / 2.0, // 碰撞箱的最小顶点
@@ -56,8 +58,7 @@ public class VrRubberItem extends Item {
                     );
                     collisionBoxRenderer(userbox,size);
                 }
-            }
-            if(!VRPluginVerify.clientInVR()||(VRPluginVerify.clientInVR() && !VRPlugin.API.apiActive((player)))) {
+            } else {
                 if (VrRubberItem.isErasing) {
                     Vec3d lookVec = player.getRotationVector();
                     double distance = 1d;
@@ -118,12 +119,5 @@ public class VrRubberItem extends Item {
                 world.addParticle(ModParticles.RUBBER_PARTICLE,true, point.x, point.y, point.z, 0, 1, 0);
             }
         }
-    }
-    private static Vec3d getControllerPosition(PlayerEntity player, int controllerIndex) {
-        IVRAPI vrApi = VRPlugin.API; // 这里假设 VRPlugin 是你的 VR 插件类
-        if (vrApi != null && vrApi.apiActive(player)) {
-            return vrApi.getVRPlayer(player).getController(controllerIndex).position();
-        }
-        return null;
     }
 }

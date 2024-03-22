@@ -1,8 +1,14 @@
 package me.silvigarabis.mafuyu33.mafishslearning.mixin;
 
-import net.blf02.vrapi.api.IVRAPI;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPlugin;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPluginVerify;
+import static me.silvigarabis.mafuyu33.mafishslearning.TutorialMod.isVrSupported;
+import static me.silvigarabis.mafuyu33.mafishslearning.VRPlugin.getVRAPI;
+import me.silvigarabis.mafuyu33.mafishslearning.VRPlugin;
+
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.Goal;
@@ -12,10 +18,6 @@ import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 
 import java.util.Objects;
 
@@ -48,7 +50,7 @@ public abstract class LeadItemMovementMixin extends MobEntity {
 		super.updateLeash();
 		Entity entity = this.getHoldingEntity();
 
-		if (entity != null && entity.getWorld() == this.getWorld()) {
+		if (entity != null && entity.getWorld().equals(this.getWorld())){
 			this.setPositionTarget(entity.getBlockPos(), 5);
 			float f = this.distanceTo(entity);
 			if ((PathAwareEntity) (Object) this instanceof TameableEntity) {
@@ -62,22 +64,25 @@ public abstract class LeadItemMovementMixin extends MobEntity {
 			}
 
 			this.updateForLeashLength(f);
-			if(!(entity instanceof PlayerEntity user)
-					|| (VRPluginVerify.hasAPI && !VRPlugin.API.playerInVR(user)) || !VRPluginVerify.hasAPI) {//非VR状态下的拴绳
-				forceSimulate(f, entity,6.0F);
-			}else {
-				forceSimulate(f, entity,15.0F);
+
+			if (isVrSupported()
+				&& entity instanceof PlayerEntity player
+				&& getVRAPI().playerInVR(player)
+			){
+				forceSimulate(f, entity, 6.0F);
+			} else {
+				forceSimulate(f, entity, 15.0F);
 			}
 
-		}
-
-
-		//VR lead modification section. VR拴绳改造部分
-		if(entity != null && entity.getWorld() == this.getWorld()
-				&& entity instanceof PlayerEntity user && !getWorld().isClient) { //The pulling effect of leading in VR state.VR状态下的拴绳拉扯效果，
-			if (VRPluginVerify.hasAPI && VRPlugin.API.playerInVR(user)) {
-				Vec3d currentPosMainController = getControllerPosition(user);
-				Vec3d currentPos = getHMDPosition(user);
+			//VR lead modification section. VR拴绳改造部分
+			//The pulling effect of leading in VR state.VR状态下的拴绳拉扯效果，
+			if (this.getWorld().isClient
+				&& isVrSupported() 
+				&& entity instanceof PlayerEntity player
+				&& getVRAPI().playerInVR(player)
+			){
+				Vec3d currentPosMainController = VRPlugin.getMainhandControllerPosition(player);
+				Vec3d currentPos = VRPlugin.getHMDPosition(player);
 				if (currentPosMainController != null) {
 					double leashHandDistance = currentPosMainController.distanceTo(lastPosMainController); // Calculate the distance between the current position and the previous position of the leaded hand,计算拴绳手的当前位置和上一个位置之间的距离
 					double pullThreshold = 0.11; // 可以调整这个值来设置敏感度
@@ -139,21 +144,4 @@ public abstract class LeadItemMovementMixin extends MobEntity {
 			this.getNavigation().startMovingTo(this.getX() + vec3d.x, this.getY() + vec3d.y, this.getZ() + vec3d.z, this.getFollowLeashSpeed());
 		}
 	}
-	@Unique
-	private static Vec3d getHMDPosition(PlayerEntity player) {
-		IVRAPI vrApi = VRPlugin.API;
-		if (vrApi != null && vrApi.apiActive(player)) {
-			return vrApi.getVRPlayer(player).getHMD().position();
-		}
-		return null;
-	}
-	@Unique
-	private static Vec3d getControllerPosition(PlayerEntity player) {
-		IVRAPI vrApi = VRPlugin.API;
-		if (vrApi != null && vrApi.apiActive(player)) {
-			return vrApi.getVRPlayer(player).getController(0).position();
-		}
-		return null;
-	}
-
 }

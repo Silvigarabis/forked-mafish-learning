@@ -1,10 +1,7 @@
 package me.silvigarabis.mafuyu33.mafishslearning.item.custom;
 
-import net.blf02.vrapi.common.VRAPI;
 import me.silvigarabis.mafuyu33.mafishslearning.mixinhelper.BlockEnchantmentHelper;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ParticleStorage;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPlugin;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPluginVerify;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -32,14 +29,6 @@ public class BreadSwordItem extends SwordItem {
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         PlayerEntity user = context.getPlayer();
-
-//        if(VRPluginVerify.hasAPI){
-//            if (VRPlugin.API.playerInVR(user)) {
-//                user.sendMessage(Text.literal("在VR里"),false);
-//            } else {
-//                user.sendMessage(Text.literal("不在VR里"),false);
-//            }
-//        }
 
         BlockPos blockPos = context.getBlockPos();
         System.out.println(BlockEnchantmentHelper.getEnchantment(blockPos));

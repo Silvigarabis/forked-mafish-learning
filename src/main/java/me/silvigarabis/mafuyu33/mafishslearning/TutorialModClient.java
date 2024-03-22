@@ -1,9 +1,11 @@
 package me.silvigarabis.mafuyu33.mafishslearning;
+
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+
 import me.silvigarabis.mafuyu33.mafishslearning.block.ModBlocks;
 import me.silvigarabis.mafuyu33.mafishslearning.entity.ModEntities;
 //import me.silvigarabis.mafuyu33.mafishslearning.util.ModModelPredicateProvider;
@@ -17,12 +19,18 @@ import me.silvigarabis.mafuyu33.mafishslearning.particle.custom.CitrineParticle;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.custom.RubberParticle;
 import me.silvigarabis.mafuyu33.mafishslearning.screen.GemPolishingScreen;
 import me.silvigarabis.mafuyu33.mafishslearning.screen.ModScreenHandlers;
+
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class TutorialModClient implements ClientModInitializer {
+    public static final Logger LOGGER = LoggerFactory.getLogger("tutorialmod");
+
     @Override
     public void onInitializeClient() {
         EntityRendererRegistry.register(ModEntities.TNT_PROJECTILE, FlyingItemEntityRenderer::new);
@@ -47,10 +55,9 @@ public class TutorialModClient implements ClientModInitializer {
 //        ModModelPredicateProvider.registerModModels();
 
         ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {//客户端已经成功连接到服务器
+                LOGGER.info("加载粒子数据");
                 // 调用您的方法
                 ParticleStorage.getOrCreateForWorld().spawnAllParticles(MinecraftClient.getInstance().world);
-                System.out.println("哈哈哈哈哈");
-
         });
     }
 }

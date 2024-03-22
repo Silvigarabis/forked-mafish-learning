@@ -1,12 +1,9 @@
 package me.silvigarabis.mafuyu33.mafishslearning.particle.custom;
 
-import net.blf02.vrapi.api.IVRAPI;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.VrRubberItem;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ParticleStorage;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPlugin;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPluginVerify;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.util.math.MatrixStack;

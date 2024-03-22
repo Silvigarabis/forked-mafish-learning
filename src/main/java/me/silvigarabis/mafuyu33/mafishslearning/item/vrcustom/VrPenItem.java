@@ -1,10 +1,11 @@
 package me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom;
 
-import net.blf02.vrapi.api.IVRAPI;
+import me.silvigarabis.mafuyu33.mafishslearning.VRPlugin;
+import static me.silvigarabis.mafuyu33.mafishslearning.TutorialMod.isVrSupported;
+import static me.silvigarabis.mafuyu33.mafishslearning.VRPlugin.getVRAPI;
+
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ModParticles;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ParticleStorage;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPlugin;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPluginVerify;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
@@ -112,15 +113,14 @@ public class VrPenItem extends Item{
                         blue =1.0;
                     }
                 }
-                if (VRPluginVerify.clientInVR() && VRPlugin.API.apiActive(((PlayerEntity) entity))) {
-                    Vec3d currentPosMainController = getControllerPosition((PlayerEntity) entity, 0);
+
+                // drawing in vr mode
+                if (VRPlugin.isClientInVr() && entity instanceof PlayerEntity player && getVRAPI().apiActive(player)){
+                    Vec3d currentPosMainController = VRPlugin.getControllerPosition(player, 0);
                     Vec3d particlePosition = new Vec3d(currentPosMainController.getX(), currentPosMainController.getY(), currentPosMainController.getZ());
                     world.addParticle(ModParticles.CITRINE_PARTICLE,true, particlePosition.x,particlePosition.y,particlePosition.z, red, green, blue);
                     ParticleStorage.getOrCreateForWorld().addParticle(particlePosition, red, green, blue);
-
-                }
-                if(!VRPluginVerify.clientInVR()||(VRPluginVerify.clientInVR() && !VRPlugin.API.apiActive(((PlayerEntity) entity)))){
-                    System.out.println("生成粒子");
+                } else { // not in vr mode
                     // 获取玩家的朝向
                     Vec3d lookVec = entity.getRotationVector();
                     double distance = 1d;
@@ -134,12 +134,5 @@ public class VrPenItem extends Item{
                 }
             }
         }
-    }
-    private static Vec3d getControllerPosition(PlayerEntity player, int controllerIndex) {
-        IVRAPI vrApi = VRPlugin.API; // 这里假设 VRPlugin 是你的 VR 插件类
-        if (vrApi != null && vrApi.apiActive(player)) {
-            return vrApi.getVRPlayer(player).getController(controllerIndex).position();
-        }
-        return null;
     }
 }

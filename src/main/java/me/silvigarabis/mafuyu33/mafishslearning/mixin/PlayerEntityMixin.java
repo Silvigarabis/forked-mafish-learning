@@ -4,8 +4,10 @@ package me.silvigarabis.mafuyu33.mafishslearning.mixin;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.ParseResults;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+
 import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.VrPenItem;
 import me.silvigarabis.mafuyu33.mafishslearning.mixinhelper.BowDashMixinHelper;
 import me.silvigarabis.mafuyu33.mafishslearning.mixinhelper.ShieldDashMixinHelper;
@@ -13,8 +15,7 @@ import me.silvigarabis.mafuyu33.mafishslearning.mixinhelper.TripwireBlockMixinHe
 import me.silvigarabis.mafuyu33.mafishslearning.networking.ModMessages;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ModParticles;
 import me.silvigarabis.mafuyu33.mafishslearning.sound.ModSounds;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPlugin;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPluginVerify;
+
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
@@ -33,6 +34,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;

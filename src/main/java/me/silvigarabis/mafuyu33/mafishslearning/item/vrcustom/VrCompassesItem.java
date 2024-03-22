@@ -1,10 +1,12 @@
 package me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom;
 
-import net.blf02.vrapi.api.IVRAPI;
+import me.silvigarabis.mafuyu33.mafishslearning.VRPlugin;
+import static me.silvigarabis.mafuyu33.mafishslearning.TutorialMod.isVrSupported;
+import static me.silvigarabis.mafuyu33.mafishslearning.VRPlugin.getVRAPI;
+
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ModParticles;
 import me.silvigarabis.mafuyu33.mafishslearning.particle.ParticleStorage;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPlugin;
-import me.silvigarabis.mafuyu33.mafishslearning.vr.VRPluginVerify;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -28,13 +30,13 @@ public class VrCompassesItem extends Item{
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         if(world.isClient) {
-            if (VRPluginVerify.clientInVR() && VRPlugin.API.apiActive((player))) {//VR
+            if (isVrSupported() && VRPlugin.isClientInVr() && getVRAPI().apiActive(player)){
                 if (firstPosition == null) {
                     // 第一次使用直尺，记录第一个位置
-                    firstPosition = getControllerPosition(player, 0);
+                    firstPosition = VRPlugin.getMainhandControllerPosition(player);
                 } else {
                     // 第二次使用直尺，记录第二个位置
-                    Vec3d secondPosition = getControllerPosition(player, 0);
+                    Vec3d secondPosition = VRPlugin.getMainhandControllerPosition(player);
                     //获取颜色
                     setColor(player);
                     // 在第一次和第二次点击之间执行你想要的操作，例如生成粒子
@@ -43,8 +45,7 @@ public class VrCompassesItem extends Item{
                     // 清除第一个位置
                     firstPosition = null;
                 }
-            }
-            if(!VRPluginVerify.clientInVR()||(VRPluginVerify.clientInVR() && !VRPlugin.API.apiActive((player)))){//NOT VR
+            } else {
                 // 获取玩家的朝向
                 Vec3d lookVec = player.getRotationVector();
                 double distance = 1d;
@@ -143,14 +144,6 @@ public class VrCompassesItem extends Item{
                 blue =1.0;
             }
         }
-    }
-
-    private static Vec3d getControllerPosition(PlayerEntity player, int controllerIndex) {
-        IVRAPI vrApi = VRPlugin.API; // 这里假设 VRPlugin 是你的 VR 插件类
-        if (vrApi != null && vrApi.apiActive(player)) {
-            return vrApi.getVRPlayer(player).getController(controllerIndex).position();
-        }
-        return null;
     }
 
     private void generateParticlesBetweenTwoPositions(World world, Vec3d pos1, Vec3d pos2, double red, double green, double blue) {

@@ -1,3 +1,101 @@
+package me.silvigarabis.mafuyu33.mafishslearning;
+
+import net.blf02.vrapi.api.IVRAPI;
+
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
+
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.MinecraftClient;
+
+import java.util.List;
+
+public class VRPlugin {
+   private static IVRAPI vrApi = null;
+   public static IVRAPI getVRAPI(){
+      return vrApi;
+   }
+   public static boolean init(){
+      if (vrApi != null){
+         return true;
+      }
+      List<EntrypointContainer<IVRAPI>> entrypointList = FabricLoader.getInstance()
+         .getEntrypointContainers("vrapi", IVRAPI.class);
+      if (entrypointList.size() != 0)
+         vrApi = entrypointList.get(0).getEntrypoint();
+      return vrApi != null;
+   }
+   public static boolean isClientInVr(){
+      if (vrApi != null){
+         return false;
+      }
+      PlayerEntity clientPlayer = MinecraftClient.getInstance().player;
+      if (clientPlayer == null){
+         return true; // so strange...
+      }
+      return vrApi.playerInVR(clientPlayer);
+   }
+   public static Vec3d getControllerPosition(PlayerEntity player, int controllerIndex){
+      if (vrApi == null){
+         return null;
+      }
+      if (vrApi.apiActive(player)){
+         return vrApi.getVRPlayer(player).getController(controllerIndex).position();
+      }
+      return null;
+   }
+   public static Vec3d getMainhandControllerPosition(PlayerEntity player){
+      return getControllerPosition(player, 0);
+   }
+   public static Vec3d getOffhandControllerPosition(PlayerEntity player){
+      return getControllerPosition(player, 1);
+   }
+   public static Vec3d getHMDPosition(PlayerEntity player){
+      if (vrApi == null){
+         return null;
+      }
+      if (vrApi.apiActive(player)){
+         return vrApi.getVRPlayer(player).getHMD().position();
+      }
+      return null;
+   }
+}
+
+
+/*
+
+检测是不是在VR中
+if (world.isClient && VRPluginVerify.hasAPI && VRPlugin.API.playerInVR(user)) {   //有MC-VR-API并且在VR中的时候
+    user.sendMessage(Text.literal("在VR里"),false);
+}
+or
+ if (world.isClient && VRPluginVerify.clientInVR() && VRPlugin.API.apiActive(Minecraft.getInstance().player)
+
+
+获取VR玩家信息
+Vec3d currentPosMainController = getControllerPosition(user,0);
+Vec3d currentPosOffController = getControllerPosition(user,1);
+Vec3d currentPosHMD = getHMDPosition(user);
+
+private static Vec3d getHMDPosition(PlayerEntity player) {
+    IVRAPI vrApi = VRPlugin.API; // 这里假设 VRPlugin 是你的 VR 插件类
+    if (vrApi != null && vrApi.apiActive(player)) {
+        return vrApi.getVRPlayer(player).getHMD().position();
+    }
+    return null;
+}
+private static Vec3d getControllerPosition(PlayerEntity player, int controllerIndex) {
+    IVRAPI vrApi = VRPlugin.API; // 这里假设 VRPlugin 是你的 VR 插件类
+    if (vrApi != null && vrApi.apiActive(player)) {
+        return vrApi.getVRPlayer(player).getController(controllerIndex).position();
+    }
+    return null;
+}
+
+*/
+
+/*
 重置gradle
 ./gradlew clean
 ./gradlew --refresh-dependencies
@@ -126,3 +224,5 @@ buf.writeInt(shieldDashCoolDown);
 ClientPlayNetworking.send(ModMessages.Shield_Dash_ID, buf);
 
 *玩家添加速度在客户端，其他生物添加速度在服务端*
+
+*/
