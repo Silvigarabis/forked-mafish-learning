@@ -16,13 +16,13 @@
    "environment": "*",
    "entrypoints": {
       "main": [
-         "net.jiang.tutorialmod.TutorialMod"
+         "me.silvigarabis.mafuyu33.mafishslearning.TutorialMod"
       ],
       "client": [
-         "net.jiang.tutorialmod.TutorialModClient"
+         "me.silvigarabis.mafuyu33.mafishslearning.TutorialModClient"
       ],
       "fabric-datagen": [
-         "net.jiang.tutorialmod.TutorialModDataGenerator"
+         "me.silvigarabis.mafuyu33.mafishslearning.TutorialModDataGenerator"
       ]
    },
    "mixins": [

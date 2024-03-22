@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "net.jiang.tutorialmod.mixin",
+  "package": "me.silvigarabis.mafuyu33.mafishslearning.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AbstractFurnaceBlockEntityMixin",
