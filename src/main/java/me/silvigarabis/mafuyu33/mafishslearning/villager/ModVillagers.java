@@ -1,8 +1,9 @@
 package me.silvigarabis.mafuyu33.mafishslearning.villager;
 
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.LOGGER;
 import com.google.common.collect.ImmutableSet;
 import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
-import me.silvigarabis.mafuyu33.mafishslearning.TutorialMod;
 import me.silvigarabis.mafuyu33.mafishslearning.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.registry.Registries;
@@ -22,20 +23,20 @@ public class ModVillagers {
     public static final VillagerProfession SOUND_MASTER = registerProfession("sound_master",SOUND_POI_KEY);
 
     private static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> type){
-        return Registry.register(Registries.VILLAGER_PROFESSION,new Identifier(TutorialMod.MOD_ID,name),
+        return Registry.register(Registries.VILLAGER_PROFESSION,new Identifier(MOD_ID,name),
                 new VillagerProfession(name,entry-> entry.matchesKey(type),entry-> entry.matchesKey(type),
                         ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_ALLAY_DEATH));
     }
 
     private static PointOfInterestType registerPoi(String name, Block block){
-        return PointOfInterestHelper.register(new Identifier(TutorialMod.MOD_ID,name),1,1,block);
+        return PointOfInterestHelper.register(new Identifier(MOD_ID,name),1,1,block);
     }
 
     private static RegistryKey<PointOfInterestType> poiKey(String name){
-        return RegistryKey.of(RegistryKeys.POINT_OF_INTEREST_TYPE,new Identifier(TutorialMod.MOD_ID,name));
+        return RegistryKey.of(RegistryKeys.POINT_OF_INTEREST_TYPE,new Identifier(MOD_ID,name));
     }
 
     public static void registerVillagers(){
-        TutorialMod.LOGGER.info("注册一个村民"+TutorialMod.MOD_ID);
+        LOGGER.info("为模组" + MOD_ID + "注册了新的村民");
     }
 }

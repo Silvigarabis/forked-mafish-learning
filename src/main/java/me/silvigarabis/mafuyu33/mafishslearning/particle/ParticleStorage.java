@@ -12,7 +12,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static me.silvigarabis.mafuyu33.mafishslearning.TutorialMod.LOGGER;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.LOGGER;
 
 public class ParticleStorage {
 //    private static final Map<String, ParticleStorage> saveParticleStorageMap = new HashMap<>();

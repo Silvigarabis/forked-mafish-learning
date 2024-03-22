@@ -5,7 +5,8 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import me.silvigarabis.mafuyu33.mafishslearning.item.custom.*;
-import me.silvigarabis.mafuyu33.mafishslearning.TutorialMod;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.LOGGER;
 import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.VrCompassesItem;
 import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.VrPenItem;
 import me.silvigarabis.mafuyu33.mafishslearning.item.vrcustom.VrRubberItem;
@@ -99,11 +100,11 @@ public class ModItems {
     }
 
     public static Item registerItem(String name,Item item){
-        return Registry.register(Registries.ITEM,new Identifier(TutorialMod.MOD_ID,name),item);
+        return Registry.register(Registries.ITEM,new Identifier(MOD_ID,name),item);
     }
 
     public static void registerModItems(){
-        TutorialMod.LOGGER.info("注册MOD物品"+TutorialMod.MOD_ID);
+        LOGGER.info("注册MOD物品"+MOD_ID);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
     }
 }

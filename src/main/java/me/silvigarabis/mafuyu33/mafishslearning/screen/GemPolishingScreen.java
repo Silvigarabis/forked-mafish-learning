@@ -1,7 +1,9 @@
 package me.silvigarabis.mafuyu33.mafishslearning.screen;
 
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.LOGGER;
+
 import com.mojang.blaze3d.systems.RenderSystem;
-import me.silvigarabis.mafuyu33.mafishslearning.TutorialMod;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
@@ -10,7 +12,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class GemPolishingScreen extends HandledScreen<GemPolishingScreenHandler> {
-    private static final Identifier TEXTURE = new Identifier(TutorialMod.MOD_ID, "textures/gui/gem_polishing_station_gui.png");
+    private static final Identifier TEXTURE = new Identifier(MOD_ID, "textures/gui/gem_polishing_station_gui.png");
 
     public GemPolishingScreen(GemPolishingScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);

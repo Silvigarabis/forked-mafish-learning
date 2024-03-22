@@ -1,6 +1,8 @@
 package me.silvigarabis.mafuyu33.mafishslearning.item;
 
-import me.silvigarabis.mafuyu33.mafishslearning.TutorialMod;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.LOGGER;
+
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -64,7 +66,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return TutorialMod.MOD_ID + ":" + this.name;
+        return MOD_ID + ":" + this.name;
     }
 
     @Override

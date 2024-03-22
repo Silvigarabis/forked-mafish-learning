@@ -16,10 +16,10 @@
    "environment": "*",
    "entrypoints": {
       "main": [
-         "me.silvigarabis.mafuyu33.mafishslearning.TutorialMod"
+         "me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod"
       ],
       "client": [
-         "me.silvigarabis.mafuyu33.mafishslearning.TutorialModClient"
+         "me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningModClient"
       ]
    },
    "mixins": [

@@ -1,6 +1,8 @@
 package me.silvigarabis.mafuyu33.mafishslearning.enchantment;
 
-import me.silvigarabis.mafuyu33.mafishslearning.TutorialMod;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.LOGGER;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
@@ -46,16 +48,11 @@ public class ModEnchantments {
     public static Enchantment SLIPPERY = register("slippery",
             new CursedTreasureLv1(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.BREAKABLE,new EquipmentSlot[]{}));
 
-
-
-
-
-
     private static Enchantment register(String name, Enchantment enchantment) {
-        return Registry.register(Registries.ENCHANTMENT, new Identifier(TutorialMod.MOD_ID, name), enchantment);
+        return Registry.register(Registries.ENCHANTMENT, new Identifier(MOD_ID, name), enchantment);
     }
 
     public static void registerModEnchantments(){
-        System.out.println("注册附魔");
+        LOGGER.info("Registering Enchantments for " + MOD_ID);
     }
 }

@@ -28,8 +28,8 @@ import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class TutorialModClient implements ClientModInitializer {
-    public static final Logger LOGGER = LoggerFactory.getLogger("tutorialmod");
+public class MafishsLearningModClient implements ClientModInitializer {
+    public static final Logger LOGGER = MafishsLearningMod.LOGGER;
 
     @Override
     public void onInitializeClient() {

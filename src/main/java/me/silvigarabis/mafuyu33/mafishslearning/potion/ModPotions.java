@@ -1,7 +1,9 @@
 package me.silvigarabis.mafuyu33.mafishslearning.potion;
 
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.LOGGER;
+
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistry;
-import me.silvigarabis.mafuyu33.mafishslearning.TutorialMod;
 import me.silvigarabis.mafuyu33.mafishslearning.effect.ModStatusEffects;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -18,7 +20,7 @@ public class ModPotions {
     public static Potion TELEPORT_POTION;
 
     public static Potion registerPotion(String name, int duration, int amplifier, StatusEffect statusEffects) {
-        return Registry.register(Registries.POTION, new Identifier(TutorialMod.MOD_ID, name),
+        return Registry.register(Registries.POTION, new Identifier(MOD_ID, name),
                 new Potion(new StatusEffectInstance(statusEffects, duration, amplifier)));
 
     }

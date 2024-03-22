@@ -1,6 +1,6 @@
 package me.silvigarabis.mafuyu33.mafishslearning.mixin;
 
-import static me.silvigarabis.mafuyu33.mafishslearning.TutorialMod.isVrSupported;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.isVrSupported;
 import static me.silvigarabis.mafuyu33.mafishslearning.VRPlugin.getVRAPI;
 import me.silvigarabis.mafuyu33.mafishslearning.VRPlugin;
 

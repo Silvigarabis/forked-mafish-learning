@@ -1,6 +1,7 @@
 package me.silvigarabis.mafuyu33.mafishslearning.sound;
 
-import me.silvigarabis.mafuyu33.mafishslearning.TutorialMod;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.LOGGER;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -23,11 +24,11 @@ public class ModSounds {
 
 
     private static SoundEvent registerSoundEvent(String name) {
-        Identifier id = new Identifier(TutorialMod.MOD_ID, name);
+        Identifier id = new Identifier(MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
     }
 
     public static void registerSounds() {
-        TutorialMod.LOGGER.info("注册一个声音 " + TutorialMod.MOD_ID);
+        LOGGER.info("注册一个声音 " + MOD_ID);
     }
 }

@@ -1,7 +1,7 @@
 package me.silvigarabis.mafuyu33.mafishslearning.item.custom;
 
 import me.silvigarabis.mafuyu33.mafishslearning.VRPlugin;
-import static me.silvigarabis.mafuyu33.mafishslearning.TutorialMod.isVrSupported;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.isVrSupported;
 import static me.silvigarabis.mafuyu33.mafishslearning.VRPlugin.getVRAPI;
 
 import com.mojang.brigadier.CommandDispatcher;

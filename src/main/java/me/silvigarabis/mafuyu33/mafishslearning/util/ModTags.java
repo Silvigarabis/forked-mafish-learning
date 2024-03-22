@@ -1,6 +1,8 @@
 package me.silvigarabis.mafuyu33.mafishslearning.util;
 
-import me.silvigarabis.mafuyu33.mafishslearning.TutorialMod;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
+import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.LOGGER;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
@@ -13,7 +15,7 @@ public class ModTags {
                 createTag("metal_detector_detectable_blocks");
 
         private static TagKey<Block> createTag(String name){
-            return TagKey.of(RegistryKeys.BLOCK,new Identifier(TutorialMod.MOD_ID,name));
+            return TagKey.of(RegistryKeys.BLOCK,new Identifier(MOD_ID,name));
         }
     }
 
@@ -21,7 +23,7 @@ public class ModTags {
         public static final TagKey<Item> MOD_ARROW_ITEMS =
                 createTag("mod_arrow_items");
         private static TagKey<Item> createTag(String name){
-            return TagKey.of(RegistryKeys.ITEM,new Identifier(TutorialMod.MOD_ID,name));
+            return TagKey.of(RegistryKeys.ITEM,new Identifier(MOD_ID,name));
         }
     }
 

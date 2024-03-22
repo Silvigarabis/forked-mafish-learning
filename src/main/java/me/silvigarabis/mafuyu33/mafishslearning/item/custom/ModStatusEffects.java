@@ -8,7 +8,7 @@
 //import net.minecraft.registry.Registry;
 //import net.minecraft.util.Identifier;
 //
-//import static me.silvigarabis.mafuyu33.mafishslearning.TutorialMod.MOD_ID;
+//import static me.silvigarabis.mafuyu33.mafishslearning.MafishsLearningMod.MOD_ID;
 //
 //
 //public class ModStatusEffects{
