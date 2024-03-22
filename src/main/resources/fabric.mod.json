@@ -11,7 +11,7 @@
       "homepage": "https://modrinth.com/mod/mafish-learning",
       "sources": "https://github.com/Silvigarabis/forked-mafish-learning"
    },
-   "license": "CC0-1.0",
+   "license": "MIT",
    "icon": "assets/${fabricmod_id}/icon.png",
    "environment": "*",
    "entrypoints": {
