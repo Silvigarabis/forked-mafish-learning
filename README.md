@@ -2,16 +2,16 @@
 
 马夫鱼的学习模组的**分支版本**
 
-原先为马夫鱼基于Kaupenjoe mod教程写的模组，用于其学习《我的世界》模组和视频制作。
-现在为Silvigarabis所用，用于自娱自乐。
+原先为马夫鱼基于Kaupenjoe mod教程写的模组，用于其学习《我的世界》模组和视频制作。  
+现在为Silvigarabis所用，用于自娱自乐。  
 
 源代码以CC0 1.0协议发布
 
 ## 游玩需求
 
-游戏版本：1.20.4
-模组加载器：Fabric
-依赖：`fabric-api`、`architectury`
+- 游戏版本：1.20.4
+- 模组加载器：Fabric
+- 依赖：`fabric-api`、`architectury`、`mc-vr-api`
 
 ## 内容
 
@@ -29,8 +29,8 @@
 12. 钻石镐的无限附魔
 13. *（还有更多）*
 
-关注原作者的bilibili账号「马夫鱼33」，他的视频展示了详细内容。  
-查看YouTube账号「Kaupenjoe」发布的模组教程视频。
+关注原作者的bilibili账号「马夫鱼33」，他的视频展示了这个模组的详细内容。  
+查看YouTube账号「Kaupenjoe」发布的模组教程视频。  
 
 ## （English version）
 
