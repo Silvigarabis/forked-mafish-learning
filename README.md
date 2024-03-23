@@ -41,7 +41,7 @@
 - [ ] 客户端逻辑代码分离
 - [ ] 其他优化
 
-## （English version）
+## English version (from origin)
 
 The repository is a fork version of mafish's learning mod.
 
