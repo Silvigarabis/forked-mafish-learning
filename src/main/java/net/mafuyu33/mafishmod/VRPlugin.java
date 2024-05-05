@@ -3,12 +3,10 @@ package net.mafuyu33.mafishmod;
 import net.blf02.vrapi.api.data.IVRPlayer;
 import net.blf02.vrapi.api.IVRAPI;
 
-import net.fabricmc.api.Environment;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
 
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.client.MinecraftClient;
 
 import java.util.function.Function;
 import java.util.function.Consumer;
@@ -145,10 +143,6 @@ public class VRPlugin {
     public static boolean canRetrieveData(PlayerEntity player){
         if (!hasVRAPI()){
             return false;
-        }
-
-        if(player.getWorld().isClient) {
-                return player == MinecraftClient.getInstance().player && isPlayerInVR(player);
         }
 
         //服务端可以获取任何玩家的数据
