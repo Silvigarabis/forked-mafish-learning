@@ -26,7 +26,11 @@
 		]
 	},
 	"mixins": [
-		"mafishmod.mixins.json"
+		"mafishmod.mixins.json",
+		{
+			"config": "mafishmod.client.mixins.json",
+			"environment": "client"
+		}
 	],
 	"depends": {
 		"fabricloader": ">=0.15.1",
