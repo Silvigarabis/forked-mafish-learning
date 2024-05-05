@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "mafishmod",
+	"id": "forked-mafish-learning",
 	"version": "${version}",
 	"name": "马夫鱼の奇怪模组",
 	"description": "这是马夫鱼学习我的世界模组开发的时候构建的一些奇怪玩意，模组基于kuapenjoe的实例模组。",
@@ -8,8 +8,8 @@
 		"马夫鱼33"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/mafish-learning",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Silvigarabis/forked-mafish-learning",
+		"sources": "https://github.com/Silvigarabis/forked-mafish-learning"
 	},
 	"license": "CC BY-NC 4.0",
 	"icon": "assets/mafishmod/icon.png",
@@ -34,12 +34,14 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.15.1",
-		"minecraft": "~1.20.1",
+		"architectury": "*",
+		"minecraft": "~1.20.4",
 		"java": ">=17",
 		"fabric-api": "*"
 	},
 	"accessWidener": "name.accesswidener",
 	"suggests": {
-		"another-mod": "*"
+		"vrapi": "~3.0.3",
+		"vivecraft": "*"
 	}
 }

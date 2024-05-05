@@ -20,10 +20,7 @@ loom {
 		}
 	}
 
-}
-
-loom {
-	accessWidenerPath = file("src/main/resources/mafishmod.accesswidener")
+	accessWidenerPath = file("src/main/resources/name.accesswidener")
 }
 
 repositories {
@@ -51,16 +48,7 @@ fabricApi {
 	configureDataGeneration()
 }
 
-loom {
-	accessWidenerPath = file("src/main/resources/name.accesswidener")
-}
-
-
-
 dependencies {
-
-
-
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
