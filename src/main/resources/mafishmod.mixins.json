@@ -4,7 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "ExampleMixin",
-    "enchantmentblockmixin.custom.knockback.LivingEntityMixin"
+    "enchantmentblockmixin.custom.knockback.LivingEntityMixin",
     "enchantmentitemmixin.AlwaysEnchantableMixin",
     "enchantmentitemmixin.HorseSaddleEnchantmentMixin",
     "enchantmentitemmixin.InfiniteBucketMixin$InFiniteBucketMixin",
@@ -16,7 +16,7 @@
     "itemmixin.fireworkrocket.FireworkRocketItemMixin",
     "itemmixin.lead.LeadItemMixin",
     "mobmixin.BeeRideableMixin",
-    "mobmixin.canclimb.MobEntityMixin",
+    "mobmixin.canclimb.MobEntityMixin"
   ],
   "client": [
   ],
