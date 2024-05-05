@@ -1,4 +1,5 @@
-package net.jiang.tutorialmod;
+package me.silvigarabis.mafishslearning;
+
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
@@ -23,7 +24,7 @@ import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 
-public class TutorialModClient implements ClientModInitializer {
+public class MafishsLearningModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         //投射物注册

@@ -1,0 +1,567 @@
+11:14:16: Executing 'runServer'...
+
+
+> Configure project :
+Fabric Loom: 1.5.8
+
+> Task :compileJava
+
+> Task :processResources UP-TO-DATE
+> Task :classes
+> Task :generateDLIConfig
+> Task :generateLog4jConfig
+> Task :generateRemapClasspath UP-TO-DATE
+> Task :configureLaunch
+����: PRIVATE overwrite method cannot reduce visibility of PUBLIC method in net.minecraft.entity.LivingEntity
+ע: ĳЩ�����ļ�ʹ�û򸲸����ѹ�ʱ�� API��
+ע: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+ע: F:\IntelliJ IDEA\minecraft-learning\src\main\java\net\mafuyu33\mafishmod\datagen\ModLootTableProvider.javaʹ����δ�����򲻰�ȫ�Ĳ�����
+ע: �й���ϸ��Ϣ, ��ʹ�� -Xlint:unchecked ���±��롣
+1 ������
+
+> Task :runServer
+[11:14:21] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.4 with Fabric Loader 0.15.6
+[11:14:21] [main/INFO] (FabricLoader) Loading 80 mods:
+	- architectury 11.0.12
+	- chunky 1.3.138
+	- distanthorizons 2.0.2-a-dev
+	   \-- fabric-rendering-v1 3.0.12+78d798af4f
+	- fabric-api 0.96.1+1.20.4
+	- fabric-api-base 0.4.36+78d798af4f
+	- fabric-api-lookup-api-v1 1.6.49+82b1bb3e4f
+	- fabric-biome-api-v1 13.0.16+78d798af4f
+	- fabric-block-api-v1 1.0.16+3e2216cb4f
+	- fabric-block-view-api-v2 1.0.4+78d798af4f
+	- fabric-command-api-v1 1.2.41+f71b366f4f
+	- fabric-command-api-v2 2.2.20+78d798af4f
+	- fabric-commands-v0 0.2.58+df3654b34f
+	- fabric-containers-v0 0.1.86+df3654b34f
+	- fabric-content-registries-v0 5.0.13+78d798af4f
+	- fabric-convention-tags-v1 1.5.10+78d798af4f
+	- fabric-crash-report-info-v1 0.2.23+78d798af4f
+	- fabric-data-attachment-api-v1 1.1.1+b90db5744f
+	- fabric-data-generation-api-v1 13.2.1+5c0133444f
+	- fabric-dimensions-v1 2.1.61+78d798af4f
+	- fabric-entity-events-v1 1.6.0+44c0f8c64f
+	- fabric-events-interaction-v0 0.7.1+389931eb4f
+	- fabric-events-lifecycle-v0 0.2.74+df3654b34f
+	- fabric-game-rule-api-v1 1.0.46+78d798af4f
+	- fabric-gametest-api-v1 1.3.3+85d85a934f
+	- fabric-item-api-v1 2.2.0+d6f2b0844f
+	- fabric-item-group-api-v1 4.0.23+78d798af4f
+	- fabric-language-kotlin 1.10.17+kotlin.1.9.22
+	   |-- org_jetbrains_kotlin_kotlin-reflect 1.9.22
+	   |-- org_jetbrains_kotlin_kotlin-stdlib 1.9.22
+	   |-- org_jetbrains_kotlin_kotlin-stdlib-jdk7 1.9.22
+	   |-- org_jetbrains_kotlin_kotlin-stdlib-jdk8 1.9.22
+	   |-- org_jetbrains_kotlinx_atomicfu-jvm 0.23.1
+	   |-- org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm 1.7.3
+	   |-- org_jetbrains_kotlinx_kotlinx-coroutines-jdk8 1.7.3
+	   |-- org_jetbrains_kotlinx_kotlinx-datetime-jvm 0.5.0
+	   |-- org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm 1.6.2
+	   |-- org_jetbrains_kotlinx_kotlinx-serialization-core-jvm 1.6.2
+	   \-- org_jetbrains_kotlinx_kotlinx-serialization-json-jvm 1.6.2
+	- fabric-lifecycle-events-v1 2.3.0+a67ffb5d4f
+	- fabric-loot-api-v2 2.1.7+78d798af4f
+	- fabric-message-api-v1 6.0.5+78d798af4f
+	- fabric-mining-level-api-v1 2.1.63+78d798af4f
+	- fabric-networking-api-v1 3.1.7+2e5ac5484f
+	- fabric-object-builder-api-v1 13.0.11+06274a474f
+	- fabric-particles-v1 1.1.7+78d798af4f
+	- fabric-recipe-api-v1 2.0.20+78d798af4f
+	- fabric-registry-sync-v0 4.0.18+78d798af4f
+	- fabric-rendering-data-attachment-v1 0.3.42+73761d2e4f
+	- fabric-rendering-fluids-v1 3.1.0+d74054c14f
+	- fabric-resource-conditions-api-v1 2.3.14+78d798af4f
+	- fabric-resource-loader-v0 0.11.18+b66dcf784f
+	- fabric-screen-handler-api-v1 1.3.55+78d798af4f
+	- fabric-transfer-api-v1 4.0.10+e84342304f
+	- fabric-transitive-access-wideners-v1 5.0.14+78d798af4f
+	- fabricloader 0.15.6
+	- forgeconfigapiport 20.4.3
+	   |-- com_electronwill_night-config_core 3.6.6
+	   \-- com_electronwill_night-config_toml 3.6.6
+	- immersivemc 1.5.0-alpha1
+	- java 17
+	- mafishmod 0.14-1.20.4
+	- minecraft 1.20.4
+	- mixinextras 0.3.2
+	- tectonic 2.2.1
+	- terralith 2.4.11
+	- vivecraft 1.20.4-1.1.8
+	   |-- com_electronwill_night-config_core 3.6.6
+	   |-- com_electronwill_night-config_toml 3.6.6
+	   |-- org_lwjgl_lwjgl-openvr 3.3.1
+	   |-- org_lwjgl_lwjgl-openvr_natives-linux 3.3.1
+	   |-- org_lwjgl_lwjgl-openvr_natives-macos 3.3.1
+	   \-- org_lwjgl_lwjgl-openvr_natives-windows 3.3.1
+	- vrapi 3.0.7
+	- yet_another_config_lib_v3 3.3.2+1.20.4
+	   |-- com_twelvemonkeys_common_common-image 3.10.0
+	   |-- com_twelvemonkeys_common_common-io 3.10.0
+	   |-- com_twelvemonkeys_common_common-lang 3.10.0
+	   |-- com_twelvemonkeys_imageio_imageio-core 3.10.0
+	   |-- com_twelvemonkeys_imageio_imageio-metadata 3.10.0
+	   |-- com_twelvemonkeys_imageio_imageio-webp 3.10.0
+	   |-- org_quiltmc_parsers_gson 0.2.1
+	   \-- org_quiltmc_parsers_json 0.2.1
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlin_kotlin-stdlib-jdk714503352970878249658.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_lwjgl_lwjgl-openvr14133031838888164065.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_quiltmc_parsers_gson6858258756557939732.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_lwjgl_lwjgl-openvr_natives-linux18122449793297322418.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\com_electronwill_night-config_toml1150476460059110369.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\com_twelvemonkeys_common_common-lang4703249764843223753.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\com_twelvemonkeys_imageio_imageio-metadata9273288549205791554.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlinx_kotlinx-coroutines-jdk810540302486631424125.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm3179973352532580083.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlinx_atomicfu-jvm18193766158354313914.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\com_twelvemonkeys_imageio_imageio-webp11446914667682709731.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlin_kotlin-stdlib-jdk817696277085144368008.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlin_kotlin-reflect3078412223934717491.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm16535693014690468029.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_lwjgl_lwjgl-openvr_natives-macos3688712617551067407.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\com_electronwill_night-config_core13102783407491546348.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlinx_kotlinx-serialization-core-jvm6138924199921026968.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_quiltmc_parsers_json5278009118773895419.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlin_kotlin-stdlib11813730527124369058.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\com_twelvemonkeys_common_common-io17594282348267983087.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlinx_kotlinx-datetime-jvm11729879990888631683.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_lwjgl_lwjgl-openvr_natives-windows17260748895471171346.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\com_twelvemonkeys_imageio_imageio-core5370219978136035235.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\org_jetbrains_kotlinx_kotlinx-serialization-json-jvm6514993557492077207.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:27] [main/WARN] (FabricLoader/ModRemap) Error deleting temporary input jar true
+ java.nio.file.FileSystemException: .\.fabric\tmp\com_twelvemonkeys_common_common-image7636273393583766412.jar: ��һ����������ʹ�ô��ļ��������޷����ʡ�
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275) ~[?:?]
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110) ~[?:?]
+	at java.nio.file.Files.deleteIfExists(Files.java:1191) ~[?:?]
+	at net.fabricmc.loader.impl.discovery.RuntimeModRemapper.remap(RuntimeModRemapper.java:194) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.setup(FabricLoaderImpl.java:242) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:146) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]
+[11:14:28] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/********/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.12.5+mixin.0.8.5/8d31fb97c3e0cd7c8dad3441851c523bcfae6d8e/sponge-mixin-0.12.5+mixin.0.8.5.jar Service=Knot/Fabric Env=SERVER
+[11:14:28] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[11:14:28] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[11:14:28] [main/WARN] (FabricLoader/Mixin) Reference map 'ForgeConfigAPIPort-Common-refmap.json' for forgeconfigapiport.common.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:14:28] [main/WARN] (FabricLoader/Mixin) Error loading class: net/minecraft/client/gui/screen/ingame/HandledScreen (java.lang.RuntimeException: Cannot load class net.minecraft.client.gui.screen.ingame.HandledScreen in environment type SERVER)
+[11:14:28] [main/WARN] (FabricLoader/Mixin) @Mixin target net.minecraft.client.gui.screen.ingame.HandledScreen was not found mafishmod.mixins.json:HandledScreenMixin from mod mafishmod
+[11:14:28] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.2).
+[11:14:36] [main/INFO] (fabric-networking-api-v1) Force Packet Serialization is enabled to mimic remote connection on single player, this is the default behaviour on dev env. Add -Dfabric-api.networking.force-packet-serialization=false JVM arg to disable it.
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/76a3075595713f9ead985fe1b5bc670f
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/4f7690f0914131bfb637c4b9db1a0d1c
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/a6daf1a1e95931bc8f3abcbda1a2ae9d
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/840fe05af8cd3b4aa95281c6cc221938
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/17c566f85bb03fb69f8615e26b6784b4
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/b80b4c698dec3f6f87b9726830b1ace8
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/544a29a5d5183866803b64316e1294b1
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/c36dcfa0b7ab3b8bb8b35a54b6d07097
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/f802f5d752b638be9b7c637a8a4c19d6
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/99444a2917f03fe5a9692032bd12bf33
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/69fd935ac1a93efaa9557e3279ab6dff
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/ffb125f7948b3624985f99a74b44b6b6
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/65e1afdf666c30bca0c2c459fb9cb3be
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/b097a3dc46b7325b9cd24ba38d0447b4
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/26ac8e7ddec3356bb6764befd257dc32
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/14126b0bf54233409f83ae93b77196f7
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/0011717adeda362481b4fc4e9dc0eeb9
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/a55bce397a523be2895599ebf32bb8f3
+[11:14:36] [main/INFO] (NetworkManagerImpl) Registering C2S receiver with id immersivemc:immersive_mc/8fc988cfeded3ca4af3631137cc4d74f
+[11:14:36] [main/INFO] (mafishmod) ע��MOD��Ʒmafishmod
+[11:14:36] [main/INFO] (mafishmod) ע��һ���Զ�����ƷTABmafishmod
+[11:14:36] [main/INFO] (mafishmod) ע��һ������mafishmod
+[11:14:36] [main/INFO] (mafishmod) Registering Block Entities for mafishmod
+[11:14:36] [main/INFO] (mafishmod) ע��һ������mafishmod
+[11:14:36] [main/INFO] (mafishmod) ע��һ������ mafishmod
+[11:14:36] [main/INFO] (Minecraft) [STDOUT]: ע�ḽħ
+[11:14:37] [main/ERROR] (Minecraft) Failed to start the minecraft server
+ java.lang.RuntimeException: Could not execute entrypoint stage 'main' due to errors, provided by 'vrapi'!
+	at net.fabricmc.loader.impl.FabricLoaderImpl.lambda$invokeEntrypoints$2(FabricLoaderImpl.java:388) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.util.ExceptionUtil.gatherExceptions(ExceptionUtil.java:33) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.invokeEntrypoints(FabricLoaderImpl.java:386) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.Hooks.startServer(Hooks.java:63) ~[fabric-loader-0.15.6.jar:?]
+	at net.minecraft.server.Main.main(Main.java:109) ~[minecraft-merged-412290bd8d-1.20.4-net.fabricmc.yarn.1_20_4.1.20.4+build.3-v2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:470) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
+	Suppressed: java.lang.RuntimeException: Cannot load class net.minecraft.client.network.ClientPlayerEntity in environment type SERVER
+		at net.fabricmc.loader.impl.transformer.FabricTransformer.transform(FabricTransformer.java:59) ~[fabric-loader-0.15.6.jar:?]
+		at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPreMixinClassByteArray(KnotClassDelegate.java:462) ~[fabric-loader-0.15.6.jar:?]
+		at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:415) ~[fabric-loader-0.15.6.jar:?]
+		at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) ~[fabric-loader-0.15.6.jar:?]
+		at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) ~[fabric-loader-0.15.6.jar:?]
+		at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) ~[fabric-loader-0.15.6.jar:?]
+		at java.lang.ClassLoader.loadClass(ClassLoader.java:1095) ~[?:?]
+		at net.mafuyu33.mafishmod.TutorialMod.onInitialize(TutorialMod.java:62) ~[main/:?]
+		at net.fabricmc.loader.impl.FabricLoaderImpl.invokeEntrypoints(FabricLoaderImpl.java:384) ~[fabric-loader-0.15.6.jar:?]
+		at net.fabricmc.loader.impl.game.minecraft.Hooks.startServer(Hooks.java:63) ~[fabric-loader-0.15.6.jar:?]
+		at net.minecraft.server.Main.main(Main.java:109) ~[minecraft-merged-412290bd8d-1.20.4-net.fabricmc.yarn.1_20_4.1.20.4+build.3-v2.jar:?]
+		at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:470) ~[fabric-loader-0.15.6.jar:?]
+		at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.15.6.jar:?]
+		at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.15.6.jar:?]
+		at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
+Caused by: java.lang.ExceptionInInitializerError
+	at java.lang.J9VMInternals.ensureError(J9VMInternals.java:206) ~[?:?]
+	at java.lang.J9VMInternals.recordInitializationFailure(J9VMInternals.java:195) ~[?:?]
+	at net.blf02.vrapi.VRAPIMod.init(VRAPIMod.java:50) ~[mc-vr-api-591092-5032473.jar:?]
+	at net.blf02.fabric.VRAPIFabric.onInitialize(VRAPIFabric.java:9) ~[mc-vr-api-591092-5032473.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.invokeEntrypoints(FabricLoaderImpl.java:384) ~[fabric-loader-0.15.6.jar:?]
+	... 6 more
+Caused by: java.lang.RuntimeException: Cannot load class net.minecraft.client.option.KeyBinding in environment type SERVER
+	at net.fabricmc.loader.impl.transformer.FabricTransformer.transform(FabricTransformer.java:59) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPreMixinClassByteArray(KnotClassDelegate.java:462) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:415) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) ~[fabric-loader-0.15.6.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) ~[fabric-loader-0.15.6.jar:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:1095) ~[?:?]
+	at net.blf02.vrapi.VRAPIModClient.<clinit>(VRAPIModClient.java:9) ~[mc-vr-api-591092-5032473.jar:?]
+	at net.blf02.vrapi.VRAPIMod.init(VRAPIMod.java:50) ~[mc-vr-api-591092-5032473.jar:?]
+	at net.blf02.fabric.VRAPIFabric.onInitialize(VRAPIFabric.java:9) ~[mc-vr-api-591092-5032473.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.invokeEntrypoints(FabricLoaderImpl.java:384) ~[fabric-loader-0.15.6.jar:?]
+	... 6 more
+
+BUILD SUCCESSFUL in 20s
+6 actionable tasks: 4 executed, 2 up-to-date
+11:14:37: Execution finished 'runServer'.

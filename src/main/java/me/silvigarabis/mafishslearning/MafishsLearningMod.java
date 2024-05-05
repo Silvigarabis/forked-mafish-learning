@@ -20,25 +20,25 @@ import net.jiang.tutorialmod.util.ModCustomTrades;
 import net.jiang.tutorialmod.util.ModLootTableModifiers;
 import net.jiang.tutorialmod.villager.ModVillagers;
 
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class TutorialMod implements ModInitializer {
+public class MafishsLearningMod implements ModInitializer {
    public static final String MOD_ID = "forked-mafishs-learning";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+   public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+   public static Identifier getIdentifier(String name){
+      return new Identifier(MOD_ID, name);
+   }
 
    @Override
    public void onInitialize() {
-//      ClientTickEvents.START_CLIENT_TICK.register(this::onClientTick);
-
-      ModItems.registerModItems();
+      MafishsLearningItems.registerModItems();
       ModItemGroups.registerItemGroups();
-      ModBlocks.registerModBlocks();
-      ModBlockEntities.registerBlockEntities();
-      FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUEITE,200);
-      ModStatusEffects.registerModEffect();
-      ModPotions.registerPotions();
-      ModLootTableModifiers.modifyLootTables();
+      MafishsLearningBlockEntities.registerBlockEntities();
+      MafishsLearningStatusEffects.registerModEffect();
+      MafishsLearningPotions.registerPotions();
+      MafishsLearningLootTableModifiers.modifyLootTables();
       ModVillagers.registerVillagers();
       ModSounds.registerSounds();
       ModCustomTrades.registerCustomTrades();
@@ -46,10 +46,10 @@ public class TutorialMod implements ModInitializer {
       ModPotions.registerBrewingRecipes();
       AttackEntityCallback.EVENT.register(new AttackEntityHandler());
       ModMessages.registerC2SPackets();
-      ModParticles.registerParticles();
       
       VRPlugin.init();
    }
+}
 
 
 //   private int tickCounter = 0;
@@ -77,8 +77,6 @@ public class TutorialMod implements ModInitializer {
 //      // 在这里执行延时操作的逻辑
 //      // 例如，修改渲染效果、创建自定义 HUD 元素等
 //   }
-
-}
 
 /*
 重置gradle

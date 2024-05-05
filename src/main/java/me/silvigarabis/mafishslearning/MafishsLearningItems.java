@@ -14,22 +14,94 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item RUBY = registerItem("ruby",new Item(new FabricItemSettings().fireproof()));
-    public static final Item RAW_RUBY=registerItem("raw_ruby",new Item(new FabricItemSettings().fireproof()));
-//    public static final Item COOL_GLASS=registerItem("cool_glass",
-//            new AppleVisionProItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
-//    public static final Item COOL_GLASS2=registerItem("cool_glass2",
-//            new AppleVisionProItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
-    public static final Item METAL_DETECTOR=registerItem("metal_detector",
-            new MetalDetectorItem(new FabricItemSettings().maxDamage(64)));
+   public static final Item RUBY;
+   public static final Item RAW_RUBY;
+   public static final Item COOL_GLASS;
+   public static final Item COOL_GLASS2;
+   public static final Item METAL_DETECTOR;
+   public static final Item RUBY_STAFF;
+   public static final Item RUBY_PICKAXE;
+   public static final Item RUBY_HELMET;
+   public static final Item RUBY_CHESTPLATE;
+   public static final Item RUBY_LEGGINGS;
+   public static final Item RUBY_BOOTS;
+   public static final Item TOMATO;
+   public static final Item COAL_BRIQUEITE;
+   public static final Item TNT_BALL;
+   public static final Item STONE_BALL;
+   public static final Item APPLE_VISION_PRO;
+   public static final Item BREAD_SWORD;
+   public static final Item BREAD_SWORD_HOT;
+   public static final Item BREAD_SWORD_VERY_HOT;
+   public static final Item FU;
+   public static final Item IRON_FAKE;
+   public static final Item ZHUGE;
+   public static final Item POISON_SWORD;
+   public static final Item FIREWORK_ARROW;
+   public static final Item STARGAZY_PIE;
+   public static final Item TIME_STOP;
+   public static final Item MATH_SWORD;
+   public static final Item COLLIABLE;
+   public static final Item LIGHTNING_BALL;
+   public static final Item MILK_FLESH;
 
-    public static final Item RUBY_STAFF=registerItem("ruby_staff",
-            new RubyStuffItem(new FabricItemSettings().maxCount(1)));
-    public static final Item RUBY_PICKAXE =registerItem("ruby_pickaxe",
-            new PickaxeItem(ModToolMaterial.RUBY,2,2f, new FabricItemSettings()));
+   public static final Item VR_PEN;
+   public static final Item VR_RUBBER;
+   public static final Item VR_RULER;
+   public static final Item VR_COMPASSES;
+   public static final Item VR_MAGIC;
 
+   private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries){
+      //放到材料表里
+      entries.add(RUBY);
+      entries.add(RAW_RUBY);
+   }
+
+   private static Item registerItem(String name, Item item){
+      var identifier = MafishsLearningMod.getIdentifier(name);
+      return Registry.register(Registries.ITEM, identifier, item);
+   }
+   protected static void registerItems(){
+      ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
+   }
+
+   static {
+      net.minecraft.item.Item.Settings settings;
+      Item item;
+
+      settings = new FabricItemSettings().fireproof();
+      item = new Item(settings);
+      RUBY = registerItem("ruby", item);
+
+      settings = new FabricItemSettings().fireproof();
+      item = new Item(settings);
+      RAW_RUBY = registerItem("raw_ruby", item);
+/*
+      settings = new FabricItemSettings();
+      item = new AppleVisionProItem(MafishsLearningArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, settings);
+      COOL_GLASS = registerItem("cool_glass", item);
+*/
+/*
+      settings = new FabricItemSettings();
+      item = new AppleVisionProItem(MafishsLearningArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, settings);
+      COOL_GLASS2 = registerItem("cool_glass2", item);
+*/
+      settings = new FabricItemSettings().maxDamage(64);
+      item = new MetalDetectorItem(settings);
+      METAL_DETECTOR = registerItem("metal_detector", item);
+
+      settings = new FabricItemSettings().maxCount(1);
+      item = new RubyStuffItem(settings);
+      RUBY_STAFF = registerItem("ruby_staff", item);
+
+      settings = new FabricItemSettings();
+      item = new PickaxeItem(ModToolMaterial.RUBY, 2,2f, settings);
+      RUBY_PICKAXE = registerItem("ruby_pickaxe", item);
+
+      settings = new FabricItemSettings();
+      item = new ModArmorItem(ModArmorMaterials.RUBY,ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item RUBY_HELMET =registerItem("ruby_helmet",
-            new ModArmorItem(ModArmorMaterials.RUBY,ArmorItem.Type.HELMET, new FabricItemSettings()));
+            
     public static final Item RUBY_CHESTPLATE = registerItem("ruby_chestplate",
             new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item RUBY_LEGGINGS = registerItem("ruby_leggings",
@@ -87,20 +159,4 @@ public class ModItems {
     public static final Item VR_RULER = registerItem("vr_ruler", new VrRulerItem(new FabricItemSettings().maxCount(1)));
     public static final Item VR_COMPASSES = registerItem("vr_compasses", new VrCompassesItem(new FabricItemSettings().maxCount(1)));
     public static final Item VR_MAGIC = registerItem("vr_magic", new VrMagicItem(new FabricItemSettings().maxCount(1)));
-
-
-    private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries){
-        //放到材料表里
-        entries.add(RUBY);
-        entries.add(RAW_RUBY);
-    }
-
-    public static Item registerItem(String name,Item item){
-        return Registry.register(Registries.ITEM,new Identifier(TutorialMod.MOD_ID,name),item);
-    }
-
-    public static void registerModItems(){
-        TutorialMod.LOGGER.info("注册MOD物品"+TutorialMod.MOD_ID);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
-    }
 }
