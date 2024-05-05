@@ -56,6 +56,7 @@
     "enchantmentitemmixin.fishingrod.FishingBobberEntityMixin",
     "enchantmentitemmixin.slippery.HandledScreenMixin",
     "enchantmentitemmixin.slippery.UnPickUpAbleItemMixin",
+    "itemmixin.elytra.PlayerEntityMixin",
     "itemmixin.BowDashMixin",
     "itemmixin.KaoFishMixin",
     "itemmixin.MathModeMixin",
