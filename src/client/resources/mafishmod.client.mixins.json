@@ -5,37 +5,20 @@
   "mixins": [
     "enchantmentblockmixin.custom.bellknockbackandhurt.BellBlockEntityMixin",
     "enchantmentitemmixin.ArmorEnchantmentMixin",
-    "enchantmentitemmixin.BadLuckOfSeaItemEntityMixin",
-    "enchantmentitemmixin.GongXiFaCaiMixin",
-    "enchantmentitemmixin.ReverseMixin",
-    "enchantmentitemmixin.WeaponEnchantmentMixin",
-    "enchantmentitemmixin.fishingrod.FishingBobberEntityMixin",
-    "enchantmentitemmixin.slippery.HandledScreenMixin",
-    "enchantmentitemmixin.slippery.UnPickUpAbleItemMixin",
-    "itemmixin.elytra.PlayerEntityMixin",
     "itemmixin.BowDashMixin",
-    "itemmixin.KaoFishMixin",
     "itemmixin.MathModeMixin",
     "itemmixin.ShieldDashMixin",
-    "itemmixin.ThrowableDiamondMixin",
-    "itemmixin.cheesebergerforcat.CatEntityMixin",
-    "itemmixin.SwimmingTripwire.PlayerEntityMixin",
-    "itemmixin.SwimmingTripwire.TripwireBlockMixin",
-    "itemmixin.fireworkrocket.FireworkRocketEntityMixin",
-    "itemmixin.fireworkrocket.FireworkRocketHitOnEntityMixin",
-    "itemmixin.lead.LeadItemMovementMixin",
-    "itemmixin.lead.MobEntityMixin",
-    "itemmixin.lightningrod.LightningRodMixin",
-    "itemmixin.spyglass.SpyglassMixin",
-    "mobmixin.canclimb.LivingEntityMixin",
-    "worldtick.ServerTickMixin"
+    "itemmixin.ThrowableDiamondMixin"
   ],
   "client": [
     "ParticleManagerMixin",
     "enchantmentitemmixin.slippery.InventoryScreenMixin",
     "itemmixin.rubystuffrenderer.ItemRendererAccessor",
     "itemmixin.rubystuffrenderer.ItemRendererMixin",
-    "itemmixin.rubystuffrenderer.ModelLoaderMixin"
+    "itemmixin.rubystuffrenderer.ModelLoaderMixin",
+
+    "enchantmentitemmixin.slippery.HandledScreenMixin",
+
   ],
   "injectors": {
     "defaultRequire": 1

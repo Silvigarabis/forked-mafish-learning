@@ -1,6 +1,5 @@
 package net.mafuyu33.mafishmod.mixin.itemmixin.elytra;
 
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.mafuyu33.mafishmod.VRPlugin;
 import net.mafuyu33.mafishmod.enchantment.ModEnchantments;
 import net.mafuyu33.mafishmod.mixinhelper.ElytraJumpMixinHelper;
