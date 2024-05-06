@@ -3,6 +3,7 @@ package net.mafuyu33.mafishmod;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.mafuyu33.mafishmod.networking.ModMessages;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +16,7 @@ public class TutorialMod implements ModInitializer {
 	public void onInitialize() {
 //		ClientTickEvents.START_CLIENT_TICK.register(this::onClientTick);
 		//添加东西
+		ModMessages.registerC2SPackets();
 
 		//获取服务器实例
 		ServerLifecycleEvents.SERVER_STARTING.register(ServerManager::setServerInstance);

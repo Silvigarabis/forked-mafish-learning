@@ -1,6 +1,5 @@
 package net.mafuyu33.mafishmod.networking;
 
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.mafuyu33.mafishmod.TutorialMod;
 import net.mafuyu33.mafishmod.networking.packet.*;
@@ -28,9 +27,4 @@ public class ModMessages {
 //        ServerPlayNetworking.registerGlobalReceiver(Particle_Color_ID, ParticleColorC2SPacket::receive);
     }
 
-    public static void registerS2CPackets() {
-        ClientPlayNetworking.registerGlobalReceiver(EXAMPLE_ID, ExampleS2CPacket::receive);
-        ClientPlayNetworking.registerGlobalReceiver(NEVER_GONNA_ID, NeverGonnaS2CPacket::receive);
-        ClientPlayNetworking.registerGlobalReceiver(BELL_SOUND_ID, BellSoundS2CPacket::receive);
-    }
 }

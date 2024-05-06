@@ -1,7 +1,6 @@
 package net.mafuyu33.mafishmod.networking.packet;
 
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
-import net.minecraft.client.option.GameOptions;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.MinecraftServer;

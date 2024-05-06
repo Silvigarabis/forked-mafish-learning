@@ -40,7 +40,7 @@ import net.mafuyu33.mafishmod.villager.ModVillagers;
 import net.mafuyu33.mafishmod.sound.ModSounds;
 import net.mafuyu33.mafishmod.util.ModCustomTrades;
 import net.mafuyu33.mafishmod.enchantment.ModEnchantments;
-import net.mafuyu33.mafishmod.networking.ModMessages;
+import net.mafuyu33.mafishmod.networking.ModClientMessages;
 import net.mafuyu33.mafishmod.particle.ModParticles;
 
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
@@ -66,7 +66,6 @@ public class TutorialModClient implements ClientModInitializer {
 		ModCustomTrades.registerCustomTrades();
 		ModEnchantments.registerModEnchantments();
 		ModPotions.registerBrewingRecipes();
-		ModMessages.registerC2SPackets();
 		ModParticles.registerParticles();
 
 		//事件注册
@@ -91,7 +90,7 @@ public class TutorialModClient implements ClientModInitializer {
         HudRenderCallback.EVENT.register(new ALeaf());
 
         HandledScreens.register(ModScreenHandlers.GEM_POLISHING_SCREEN_HANDLER, GemPolishingScreen::new);
-        ModMessages.registerS2CPackets();
+        ModClientMessages.registerS2CPackets();
 
         ParticleFactoryRegistry.getInstance().register(ModParticles.CITRINE_PARTICLE, CitrineParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.RUBBER_PARTICLE, RubberParticle.Factory::new);
