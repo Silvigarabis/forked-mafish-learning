@@ -1,15 +1,17 @@
 package net.mafuyu33.mafishmod.item;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.mafuyu33.mafishmod.item.custom.*;
-import net.mafuyu33.mafishmod.TutorialMod;
-import net.mafuyu33.mafishmod.item.vrcustom.*;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+
+import net.mafuyu33.mafishmod.TutorialMod;
+import net.mafuyu33.mafishmod.item.custom.*;
+import net.mafuyu33.mafishmod.item.vrcustom.*;
 
 public class ModItems {
     public static Item RUBY;
@@ -68,19 +70,21 @@ public class ModItems {
     public static Item RTX4090;
     public static Item VR_GETTING_OVER_IT;
 
-
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries){
         //放到材料表里
         entries.add(RUBY);
         entries.add(RAW_RUBY);
     }
 
-    protected static Item registerItem(String name,Item item){
-        return Registry.register(Registries.ITEM,new Identifier(TutorialMod.MOD_ID,name),item);
+    protected static void cinit(){
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
     }
 
-    protected static void registerModItems(){
-        TutorialMod.LOGGER.info("注册MOD物品"+TutorialMod.MOD_ID);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
+    protected static Item registerItem(String name,Item item){
+        return Registry.register(Registries.ITEM, new Identifier(TutorialMod.MOD_ID, name), item);
+    }
+
+    public static void registerModItems(){
+        TutorialMod.LOGGER.info("注册MOD物品 {}", TutorialMod.MOD_ID);
     }
 }

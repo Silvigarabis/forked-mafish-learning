@@ -23,7 +23,7 @@ public class ModStatusEffects {
         // 可以在这里添加自定义效果对实体属性的修改
     }
 
-    public static void registerModEffect(){
+    public static void registerModEffects(){
     Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "ironman"), ModStatusEffects.IRONMAN);
     Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "flower_effect"), ModStatusEffects.FLOWER_EFFECT);
     Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "teleport_effect"), ModStatusEffects.TELEPORT_EFFECT);

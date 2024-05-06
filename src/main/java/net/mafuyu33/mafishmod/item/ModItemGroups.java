@@ -73,6 +73,6 @@ public class ModItemGroups {
 
 
     public static void registerItemGroups(){
-        TutorialMod.LOGGER.info("注册一个自定义物品TAB"+TutorialMod.MOD_ID);
+        // TutorialMod.LOGGER.info("注册一个自定义物品TAB"+TutorialMod.MOD_ID);
     }
 }

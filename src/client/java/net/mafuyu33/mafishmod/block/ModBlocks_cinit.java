@@ -2,12 +2,7 @@ package net.mafuyu33.mafishmod.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.mafuyu33.mafishmod.TutorialMod;
-import net.mafuyu33.mafishmod.block.custom.GemPolishingStationBlock;
-import net.mafuyu33.mafishmod.block.custom.PotatoTNTBlock;
-import net.mafuyu33.mafishmod.block.custom.PotatoTNTPrepareBlock;
-import net.mafuyu33.mafishmod.block.custom.SoundBlock;
-import net.mafuyu33.mafishmod.sound.ModSounds;
+
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.entity.effect.StatusEffects;
@@ -17,6 +12,12 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+
+import net.mafuyu33.mafishmod.TutorialMod;
+import net.mafuyu33.mafishmod.block.custom.*;
+import net.mafuyu33.mafishmod.sound.ModSounds;
+import net.mafuyu33.mafishmod.block.ModBlocks;
+import static net.mafuyu33.mafishmod.block.ModBlocks.registerBlock;
 
 public class ModBlocks_cinit {
     //这里添加新的block
@@ -46,11 +47,6 @@ public class ModBlocks_cinit {
             new GemPolishingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
     }
 
-    private static Block registerBlock(String name,Block block){
-        return ModBlocks.registerBlock(name, block);
-    }
-
     public static void registerModBlocks(){
-        TutorialMod.LOGGER.info("注册一个方块"+ TutorialMod.MOD_ID);
     }
 }

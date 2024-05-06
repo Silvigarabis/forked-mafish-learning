@@ -2,8 +2,6 @@ package net.mafuyu33.mafishmod.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.mafuyu33.mafishmod.TutorialMod;
-import net.mafuyu33.mafishmod.sound.ModSounds;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.entity.effect.StatusEffects;
@@ -13,6 +11,9 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+
+import net.mafuyu33.mafishmod.TutorialMod;
+import net.mafuyu33.mafishmod.sound.ModSounds;
 
 public class ModBlocks {
     //这里记录了已经添加的方块
@@ -35,6 +36,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks(){
-        TutorialMod.LOGGER.info("注册一个方块"+ TutorialMod.MOD_ID);
+        //TutorialMod.LOGGER.info("注册一个方块"+ TutorialMod.MOD_ID);
     }
 }
