@@ -1,6 +1,5 @@
 package net.mafuyu33.mafishmod.item.custom;
 
-import net.mafuyu33.mafishmod.entity.FuProjectileEntity;
 import net.mafuyu33.mafishmod.sound.ModSounds;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
