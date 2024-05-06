@@ -21,7 +21,8 @@ public class ModMessages {
         ServerPlayNetworking.registerGlobalReceiver(EXAMPLE_ID, ExampleC2SPacket::receive);
         ServerPlayNetworking.registerGlobalReceiver(Shield_Dash_ID, ShieldDashC2SPacket::receive);
         ServerPlayNetworking.registerGlobalReceiver(Bow_Dash_ID, BowDashC2SPacket::receive);
-        ServerPlayNetworking.registerGlobalReceiver(PARTICLE_DATA_ID, ParticleDataC2SPacket::receive);
+        //这个包还没有做好分离，先在客户端上注册
+        //ServerPlayNetworking.registerGlobalReceiver(PARTICLE_DATA_ID, ParticleDataC2SPacket::receive);
         ServerPlayNetworking.registerGlobalReceiver(GAME_OPTIONS_ID,GameOptionsC2SPacket::receive);
         ServerPlayNetworking.registerGlobalReceiver(THROW_POWER_ID,ThrowPowerC2SPacket::receive);
 //        ServerPlayNetworking.registerGlobalReceiver(Particle_Color_ID, ParticleColorC2SPacket::receive);

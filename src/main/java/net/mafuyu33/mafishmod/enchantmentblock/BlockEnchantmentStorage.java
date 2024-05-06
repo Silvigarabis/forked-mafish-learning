@@ -1,12 +1,8 @@
 package net.mafuyu33.mafishmod.enchantmentblock;
 
 import io.netty.buffer.Unpooled;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.mafuyu33.mafishmod.ServerManager;
 import net.mafuyu33.mafishmod.networking.ModMessages;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.world.ClientWorld;
-import net.minecraft.data.client.When;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.nbt.NbtCompound;

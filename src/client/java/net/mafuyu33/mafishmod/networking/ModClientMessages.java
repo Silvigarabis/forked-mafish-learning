@@ -1,5 +1,6 @@
 package net.mafuyu33.mafishmod.networking;
 
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.mafuyu33.mafishmod.TutorialMod;
 import net.mafuyu33.mafishmod.networking.packet.*;
@@ -20,5 +21,8 @@ public class ModClientMessages {
         ClientPlayNetworking.registerGlobalReceiver(EXAMPLE_ID, ExampleS2CPacket::receive);
         ClientPlayNetworking.registerGlobalReceiver(NEVER_GONNA_ID, NeverGonnaS2CPacket::receive);
         ClientPlayNetworking.registerGlobalReceiver(BELL_SOUND_ID, BellSoundS2CPacket::receive);
+
+        //以下为尚未完成环境分离的内容，先放在这里
+        ServerPlayNetworking.registerGlobalReceiver(PARTICLE_DATA_ID, ParticleDataC2SPacket::receive);
     }
 }
