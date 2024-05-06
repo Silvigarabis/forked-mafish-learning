@@ -29,7 +29,7 @@ import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 
 import net.mafuyu33.mafishmod.item.ModItems;
 import net.mafuyu33.mafishmod.item.ModItemGroups;
-import net.mafuyu33.mafishmod.block.ModBlocks;
+import net.mafuyu33.mafishmod.block.ModBlocks_cinit;
 import net.mafuyu33.mafishmod.block.entity.ModBlockEntities;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.mafuyu33.mafishmod.effect.ModStatusEffects;
@@ -54,7 +54,7 @@ public class TutorialModClient implements ClientModInitializer {
     public void onInitializeClient() {
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
-		ModBlocks.registerModBlocks();
+		ModBlocks_cinit.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();
 		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUEITE,200);
 		ModStatusEffects.registerModEffect();
