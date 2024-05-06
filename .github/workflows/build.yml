@@ -32,6 +32,9 @@ jobs:
         arguments: build
         gradle-version: wrapper
 
+    - name: gradle dependency submission
+      uses: mikepenz/gradle-dependency-submission@v1.0.0
+      
     - name: capture build artifacts
       uses: actions/upload-artifact@v4
       with:
