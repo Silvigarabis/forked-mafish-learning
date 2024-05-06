@@ -28,6 +28,7 @@ import net.minecraft.client.render.*;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 
 import net.mafuyu33.mafishmod.item.ModItems;
+import net.mafuyu33.mafishmod.item.ModItems_cinit;
 import net.mafuyu33.mafishmod.item.ModItemGroups;
 import net.mafuyu33.mafishmod.block.ModBlocks_cinit;
 import net.mafuyu33.mafishmod.block.entity.ModBlockEntities;
@@ -52,7 +53,7 @@ import net.mafuyu33.mafishmod.event.ExplosionHandler;
 public class TutorialModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-		ModItems.registerModItems();
+		ModItems_cinit.registerModItems();
 		ModItemGroups.registerItemGroups();
 		ModBlocks_cinit.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();
