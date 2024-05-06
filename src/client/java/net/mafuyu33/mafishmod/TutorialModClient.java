@@ -25,6 +25,7 @@ import net.mafuyu33.mafishmod.screen.ModScreenHandlers;
 import net.mafuyu33.mafishmod.networking.ModClientMessages;
 import net.mafuyu33.mafishmod.item.ModItems;
 import net.mafuyu33.mafishmod.block.ModBlocks;
+import net.mafuyu33.mafishmod.util.ModLootTableModifiers;
 
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
@@ -39,6 +40,9 @@ public class TutorialModClient implements ClientModInitializer {
         ModBlocks_cinit.registerModBlocks();
         ModParticles.registerParticles();
         ModClientMessages.registerS2CPackets();
+
+        ModLootTableModifiers.modifyLootTables();
+            // require ModItems;
 
         addRegistries();
         registerEvents();

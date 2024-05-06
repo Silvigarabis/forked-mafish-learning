@@ -26,7 +26,10 @@ public class TutorialMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        //ClientTickEvents.START_CLIENT_TICK.register(this::onClientTick);
+        ModSounds.registerSounds();
+        ModMessages.registerC2SPackets();
+        //获取服务器实例
+        ServerLifecycleEvents.SERVER_STARTING.register(ServerManager::setServerInstance);
 
         //添加东西
         ModItems.registerModItems();
@@ -40,15 +43,12 @@ public class TutorialMod implements ModInitializer {
         ModPotions.registerBrewingRecipes();
 
         ModEnchantments.registerModEnchantments();
-        ModLootTableModifiers.modifyLootTables();
+
         ModCustomTrades.registerCustomTrades();
-        ModSounds.registerSounds();
+            // partially require ModBlocks (ModBlocks.GOLD_MELON)
+
         ModVillagers.registerVillagers();
-
-        ModMessages.registerC2SPackets();
-
-        //获取服务器实例
-        ServerLifecycleEvents.SERVER_STARTING.register(ServerManager::setServerInstance);
+            // partially require ModBlocks (ModBlocks.WHATE_CAT_BLOCK)
 
         //VR
         VRPlugin.init();
