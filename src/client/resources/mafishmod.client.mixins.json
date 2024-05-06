@@ -17,7 +17,7 @@
     "itemmixin.rubystuffrenderer.ItemRendererMixin",
     "itemmixin.rubystuffrenderer.ModelLoaderMixin",
 
-    "enchantmentitemmixin.slippery.HandledScreenMixin",
+    "enchantmentitemmixin.slippery.HandledScreenMixin"
 
   ],
   "injectors": {

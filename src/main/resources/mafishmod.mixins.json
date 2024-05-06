@@ -75,7 +75,7 @@
     "itemmixin.lightningrod.LightningRodMixin",
     "itemmixin.SwimmingTripwire.PlayerEntityMixin",
     "itemmixin.SwimmingTripwire.TripwireBlockMixin",
-    "itemmixin.spyglass.SpyglassMixin"
+    "itemmixin.spyglass.SpyglassMixin",
     "mobmixin.BeeRideableMixin",
     "mobmixin.canclimb.MobEntityMixin",
     "mobmixin.canclimb.LivingEntityMixin",
