@@ -1,7 +1,7 @@
 package net.mafuyu33.mafishmod.entity;
 
 import net.mafuyu33.mafishmod.item.ModItems;
-import net.mafuyu33.mafishmod.render.CustomParticleRenderer;
+import static net.mafuyu33.mafishmod.particle.ParticleEmitter.emitFlameParticleAtBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.hit.EntityHitResult;
@@ -38,7 +38,7 @@ public class TNTProjectileEntity extends ThrownItemEntity {
         if(!this.getWorld().isClient()) {
             this.getWorld().sendEntityStatus(this, (byte)3);
             explode();
-            CustomParticleRenderer.spawnFlameParticles(blockHitResult.getPos());
+            emitFlameParticleAtBlock(this.getWorld(), blockHitResult.getPos());
         }
 
         this.discard();
@@ -49,7 +49,7 @@ public class TNTProjectileEntity extends ThrownItemEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         if(!this.getWorld().isClient()){
             explode();
-            CustomParticleRenderer.spawnFlameParticles(entityHitResult.getPos());
+            emitFlameParticleAtBlock(this.getWorld(), entityHitResult.getPos());
         }
 
         this.discard();

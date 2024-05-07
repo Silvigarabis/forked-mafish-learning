@@ -1,7 +1,8 @@
 package net.mafuyu33.mafishmod.entity;
 
 import net.mafuyu33.mafishmod.item.ModItems;
-import net.mafuyu33.mafishmod.render.CustomParticleRenderer;
+import static net.mafuyu33.mafishmod.particle.ParticleEmitter.emitFlameParticleAtBlock;
+
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.LivingEntity;
@@ -12,6 +13,8 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -49,7 +52,7 @@ public class LightningProjectileEntity extends ThrownItemEntity {
         if(!this.getWorld().isClient()) {
             this.getWorld().sendEntityStatus(this, (byte)3);
             lightning(blockHitResult.getBlockPos());
-            CustomParticleRenderer.spawnFlameParticles(blockHitResult.getPos());
+            emitFlameParticleAtBlock(this.getWorld(), blockHitResult.getPos());
         }
 
         this.discard();
@@ -60,7 +63,7 @@ public class LightningProjectileEntity extends ThrownItemEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         if(!this.getWorld().isClient()){
             lightning(entityHitResult.getEntity().getBlockPos());
-            CustomParticleRenderer.spawnFlameParticles(entityHitResult.getPos());
+            emitFlameParticleAtBlock(this.getWorld(), entityHitResult.getPos());
         }
 
         this.discard();
