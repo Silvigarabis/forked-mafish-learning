@@ -18,7 +18,6 @@ import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 
 import net.mafuyu33.mafishmod.item.ModItems_cinit;
-import net.mafuyu33.mafishmod.block.ModBlocks_cinit;
 import net.mafuyu33.mafishmod.particle.ModParticles;
 import net.mafuyu33.mafishmod.entity.ModEntities;
 import net.mafuyu33.mafishmod.screen.ModScreenHandlers;
@@ -37,8 +36,6 @@ public class TutorialModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         ModItems_cinit.registerModItems();
-        ModBlocks_cinit.registerModBlocks();
-        ModParticles.registerParticles();
         ModClientMessages.registerS2CPackets();
 
         ModLootTableModifiers.modifyLootTables();

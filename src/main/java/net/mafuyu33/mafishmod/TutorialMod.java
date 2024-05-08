@@ -11,6 +11,7 @@ import net.mafuyu33.mafishmod.block.entity.ModBlockEntities;
 import net.mafuyu33.mafishmod.networking.ModMessages;
 import net.mafuyu33.mafishmod.effect.ModStatusEffects;
 import net.mafuyu33.mafishmod.potion.ModPotions;
+import net.mafuyu33.mafishmod.particle.ModParticles;
 import net.mafuyu33.mafishmod.villager.ModVillagers;
 import net.mafuyu33.mafishmod.sound.ModSounds;
 import net.mafuyu33.mafishmod.enchantment.ModEnchantments;
@@ -38,6 +39,7 @@ public class TutorialMod implements ModInitializer {
         ModBlocks.registerModBlocks();
         ModBlockEntities.registerBlockEntities();
 
+        ModParticles.registerParticles();
         ModStatusEffects.registerModEffects();
         ModPotions.registerPotions();
         ModPotions.registerBrewingRecipes();
