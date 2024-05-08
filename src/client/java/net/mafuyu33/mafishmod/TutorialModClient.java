@@ -16,6 +16,7 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.mafuyu33.mafishmod.particle.ParticleStorageClient;
 
 import net.mafuyu33.mafishmod.item.ModItems_cinit;
 import net.mafuyu33.mafishmod.particle.ModParticles;
@@ -40,6 +41,8 @@ public class TutorialModClient implements ClientModInitializer {
 
         ModLootTableModifiers.modifyLootTables();
             // require ModItems;
+
+        ParticleStorageClient.init();
 
         addRegistries();
         registerEvents();
