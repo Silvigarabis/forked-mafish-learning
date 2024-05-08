@@ -4,7 +4,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.mafuyu33.mafishmod.item.ModItems;
 import net.mafuyu33.mafishmod.item.vrcustom.VrRubberItem;
-import net.mafuyu33.mafishmod.particle.ParticleStorage;
+import net.mafuyu33.mafishmod.particle.ParticleStorageClient;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
@@ -45,12 +45,12 @@ public class CitrineParticle extends SpriteBillboardParticle {
                 if (VrRubberItem.isErasing && VrRubberItem.userbox!=null) {// 检查粒子是否在笔刷碰撞箱内
                     if (isParticleInsideBox(new Vec3d(this.x, this.y, this.z), VrRubberItem.userbox)) {
                         this.markDead();
-                        ParticleStorage.removeParticleData(new Vec3d(this.x, this.y, this.z));
+                        ParticleStorageClient.removeParticleData(new Vec3d(this.x, this.y, this.z));
                     }
                 }
                 if(VrRubberItem.isErasing && player.getOffHandStack().getItem()== ModItems.RUBY){//大范围清屏
                     this.markDead();
-                    ParticleStorage.removeParticleData(new Vec3d(this.x, this.y, this.z));
+                    ParticleStorageClient.removeParticleData(new Vec3d(this.x, this.y, this.z));
                 }
             }
         }

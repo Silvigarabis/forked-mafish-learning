@@ -3,9 +3,7 @@ package net.mafuyu33.mafishmod.item.vrcustom;
 import net.mafuyu33.mafishmod.particle.ModParticles;
 import net.mafuyu33.mafishmod.util.VRDataHandler;
 import net.mafuyu33.mafishmod.VRPlugin;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -49,7 +47,7 @@ public class VrRubberItem extends Item {
                             pos.x - size / 2.0, pos.y - size / 2.0, pos.z - size / 2.0, // 碰撞箱的最小顶点
                             pos.x + size / 2.0, pos.y + size / 2.0, pos.z + size / 2.0  // 碰撞箱的最大顶点
                     );
-                    collisionBoxRenderer(userbox,size);
+                    collisionBoxRenderer(world, userbox,size);
                 }
             }else{//非vr
                 if (VrRubberItem.isErasing) {
@@ -66,13 +64,13 @@ public class VrRubberItem extends Item {
                             pos.x - size / 2.0, pos.y - size / 2.0, pos.z - size / 2.0, // 碰撞箱的最小顶点
                             pos.x + size / 2.0, pos.y + size / 2.0, pos.z + size / 2.0  // 碰撞箱的最大顶点
                     );
-                    collisionBoxRenderer(userbox,size);
+                    collisionBoxRenderer(world, userbox,size);
                 }
             }
         }
     }
 
-    private static void collisionBoxRenderer(Box userbox,double size) {
+    private static void collisionBoxRenderer(World world, Box userbox,double size) {
         // 获取碰撞箱的所有8个角点
         Vec3d[] corners = {
                 new Vec3d(userbox.minX, userbox.minY, userbox.minZ),
@@ -95,12 +93,11 @@ public class VrRubberItem extends Item {
         for (int[] edge : edges) {
             Vec3d start = corners[edge[0]];
             Vec3d end = corners[edge[1]];
-            drawParticleLine(start, end, size);
+            drawParticleLine(world, start, end, size);
         }
     }
 
-    private static void drawParticleLine(Vec3d start, Vec3d end, double size) {
-        ClientWorld world = MinecraftClient.getInstance().world;
+    private static void drawParticleLine(World world, Vec3d start, Vec3d end, double size) {
         if(world!=null && world.isClient) {
 
             Vec3d direction = end.subtract(start);
