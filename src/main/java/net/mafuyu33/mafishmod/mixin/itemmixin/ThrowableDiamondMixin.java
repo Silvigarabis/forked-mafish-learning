@@ -2,11 +2,9 @@ package net.mafuyu33.mafishmod.mixin.itemmixin;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.mafuyu33.mafishmod.entity.DiamondProjectileEntity;
-import net.mafuyu33.mafishmod.event.KeyInputHandler;
 import net.mafuyu33.mafishmod.networking.ModMessages;
 import net.mafuyu33.mafishmod.networking.packet.ThrowPowerC2SPacket;
 import net.minecraft.entity.player.PlayerEntity;
@@ -33,9 +31,6 @@ public class ThrowableDiamondMixin implements FabricItem{
 
 		ItemStack itemStack = user.getStackInHand(hand);
 		if (itemStack.getItem() == Items.DIAMOND) {
-			if(world.isClient) {
-				sendC2S();
-			}
 			world.playSound(null, user.getX(), user.getY(), user.getZ(),
 					SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
 
@@ -51,14 +46,6 @@ public class ThrowableDiamondMixin implements FabricItem{
 				itemStack.decrement(1);
 			}
 		}
-	}
-	@Unique
-	@Environment(EnvType.CLIENT)
-	private void sendC2S(){
-		float throwPower = KeyInputHandler.getThrowPower();//获取当前的投掷力度
-		PacketByteBuf buf = PacketByteBufs.create();//传输到服务端
-		buf.writeFloat(throwPower);
-		ClientPlayNetworking.send(ModMessages.THROW_POWER_ID, buf);
 	}
 }
 

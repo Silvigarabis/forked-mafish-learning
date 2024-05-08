@@ -29,8 +29,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 
 @Mixin(BellBlockEntity.class)
-public abstract class BellBlockEntityMixin extends BlockEntity {
-	public BellBlockEntityMixin(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+public abstract class BellBlockEntityMixinClient extends BlockEntity {
+	public BellBlockEntityMixinClient(BlockEntityType<?> type, BlockPos pos, BlockState state) {
 		super(type, pos, state);
 	}
 
@@ -43,28 +43,9 @@ public abstract class BellBlockEntityMixin extends BlockEntity {
 		if(world!=null && this.world.isClient) {
 			sendC2S();
 		}
-
-		if (!this.world.isClient && k > 0) {//穿刺
-			for (LivingEntity livingEntity : this.hearingEntities) {
-				if(!livingEntity.isPlayer()) {
-					if (livingEntity.isAlive() && !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)) {
-						livingEntity.damage(livingEntity.getDamageSources().magic(), k);
-					}
-				}else if(GameOptionsC2SPacket.master > 0.0f && GameOptionsC2SPacket.blocks > 0.0f && livingEntity.isAlive()
-						&& !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)){
-					livingEntity.damage(livingEntity.getDamageSources().magic(), k);
-				}
-			}
-		}
 		if ( j > 0) {//击退
 			for (LivingEntity livingEntity : this.hearingEntities) {
 				if(!livingEntity.isPlayer() && !this.world.isClient) {
-					if (livingEntity.isAlive() && !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)) {
-						// 获取 pos 指向 livingEntity 的方向向量
-						Vec3d direction = livingEntity.getPos().subtract(pos.getX(), pos.getY(), pos.getZ()).normalize();
-						// 施加一个击退效果
-						livingEntity.addVelocity(direction.x * j, 0.5, direction.z * j);
-					}
 				}else if(GameOptionsC2SPacket.master > 0.0f && GameOptionsC2SPacket.blocks > 0.0f && livingEntity.isAlive()
 						&& !livingEntity.isRemoved() && pos.isWithinDistance(livingEntity.getPos(), 32.0)){
 					// 获取 pos 指向 livingEntity 的方向向量

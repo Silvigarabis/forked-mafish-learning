@@ -6,7 +6,6 @@ import com.mojang.brigadier.ParseResults;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.mafuyu33.mafishmod.mixinhelper.BowDashMixinHelper;
 import net.mafuyu33.mafishmod.mixinhelper.TripwireBlockMixinHelper;
@@ -45,35 +44,6 @@ public abstract class BowDashMixin extends LivingEntity {
 
     @Inject(at = @At("HEAD"), method = "tick")
     private void init1(CallbackInfo ci) {
-
-        if(getWorld().isClient && this.isHolding(Items.BOW) && this.isUsingItem()
-                && BowDashMixinHelper.isAttackKeyPressed() && BowDashCoolDown<=0){//弓箭手突击
-            // 获取玩家的水平朝向角度（角度值）
-            Vec3d velocity = this.getVelocity();
-            // 投影到水平平面上
-            Vec3d horizontalMotion = new Vec3d(velocity.x, 0, velocity.z);
-            // 将水平移动向量标准化
-            if (horizontalMotion.lengthSquared() > 0) {
-                horizontalMotion = horizontalMotion.normalize();
-            }
-            float amp = 2;
-            this.addVelocity(amp*horizontalMotion.x,0.14,amp*horizontalMotion.z);
-
-            sendC2S();
-
-            System.out.println("突进");
-
-            getWorld().playSound(this,this.getBlockPos(),
-                    ModSounds.DASH_SOUND, SoundCategory.PLAYERS,1f,1f);
-            BowDashCoolDown=20;
-
-        }
-        if(getWorld().isClient && BowDashCoolDown>0){//弓箭手突击内置冷却部分，传递数据包到服务端
-            BowDashCoolDown--;
-//            System.out.println(BowDashCoolDown);
-            sendC2S();
-        }
-
 
         if (!getWorld().isClient && BowDashMixinHelper.getHitCoolDown(this.getId())!=0) {//时间变慢部分
             MinecraftServer server = this.getServer();
@@ -171,12 +141,5 @@ public abstract class BowDashMixin extends LivingEntity {
                 }
             }
         }
-    }
-    @Unique
-    @Environment(EnvType.CLIENT)
-    private void sendC2S(){
-        PacketByteBuf buf = PacketByteBufs.create();//传输到服务端
-        buf.writeInt(BowDashCoolDown);
-        ClientPlayNetworking.send(ModMessages.Bow_Dash_ID, buf);
     }
 }

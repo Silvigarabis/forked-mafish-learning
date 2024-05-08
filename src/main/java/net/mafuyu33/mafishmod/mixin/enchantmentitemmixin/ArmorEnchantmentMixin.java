@@ -7,8 +7,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FrostedIceBlock;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.option.GameOptions;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.*;
@@ -219,13 +217,6 @@ public abstract class ArmorEnchantmentMixin extends Entity implements Attackable
 //
 //				}
 			}
-			if (getWorld().isClient && armorItem.getItem() instanceof ArmorItem
-					&& ((ArmorItem) armorItem.getItem()).getType() == ArmorItem.Type.HELMET) {//帽子
-				int o = EnchantmentHelper.getLevel(ModEnchantments.MUTE, armorItem);//静音
-				if (o > 0 && this.isPlayer()) {
-					mute();
-				}
-			}
 			if (armorItem.getItem() instanceof ArmorItem) {//随便什么装甲
 				int p = EnchantmentHelper.getLevel(ModEnchantments.NO_BLAST_PROTECTION, armorItem);//爆炸不保护
 				if (p > 0 && this.getRecentDamageSource()!= null){
@@ -237,12 +228,6 @@ public abstract class ArmorEnchantmentMixin extends Entity implements Attackable
 		}
 	}
 
-	@Unique
-	@Environment(EnvType.CLIENT)
-	private void mute(){
-		GameOptions gameOptions = MinecraftClient.getInstance().options;
-		gameOptions.getSoundVolumeOption(SoundCategory.MASTER).setValue((double) 0);
-	}
 	@Unique
 	private static void freezeWater(ArmorEnchantmentMixin entity, World world, BlockPos blockPos, int level) {
 		if (entity.isOnGround()) {

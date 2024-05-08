@@ -72,5 +72,6 @@ public class TutorialMod implements ModInitializer {
         PlayerBlockBreakEvents.BEFORE.register(new BeforeBlockBreakHandler());
         PlayerBlockBreakEvents.AFTER.register(new AfterBlockBreakHandler());
         ExplosionHandler.init();
+        ServerChatMessageHandler.register();
     }
 }

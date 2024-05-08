@@ -1,7 +1,7 @@
 package net.mafuyu33.mafishmod.mixin.itemmixin;
 
 
-import net.mafuyu33.mafishmod.event.ChatMessageHandler;
+import net.mafuyu33.mafishmod.event.ServerChatMessageHandler;
 import net.mafuyu33.mafishmod.item.custom.ColliableItem;
 import net.mafuyu33.mafishmod.item.custom.MathSwordItem;
 import net.mafuyu33.mafishmod.mixinhelper.MathQuestionMixinHelper;
@@ -70,9 +70,9 @@ public abstract class MathModeMixin extends Entity implements Attackable {
             }
             if (this.hasCustomName() && closestPlayer != null) {//检测有没有答对
 //            System.out.println("answer = "+MathQuestionMixinHelper.getEntityValue(this.getId()));
-//            System.out.println("youranswer = "+ChatMessageHandler.getNumber());
+//            System.out.println("youranswer = "+ServerChatMessageHandler.getNumber());
 
-                if (MathQuestionMixinHelper.getEntityValue(this.getId()) == ChatMessageHandler.getNumber()) {
+                if (MathQuestionMixinHelper.getEntityValue(this.getId()) == ServerChatMessageHandler.getNumber()) {
                     closestPlayer.swingHand(getActiveHand());
                     getWorld().playSound(closestPlayer,closestPlayer.getBlockPos(),
                             SoundEvents.ENTITY_PLAYER_ATTACK_KNOCKBACK, SoundCategory.PLAYERS,1f,1f);

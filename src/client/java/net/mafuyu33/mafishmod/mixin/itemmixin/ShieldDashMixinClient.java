@@ -28,7 +28,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
-public abstract class ShieldDashMixin extends Entity implements Attackable {
+public abstract class ShieldDashMixinClient extends Entity implements Attackable {
 
     @Shadow public abstract Iterable<ItemStack> getArmorItems();
 
@@ -41,7 +41,7 @@ public abstract class ShieldDashMixin extends Entity implements Attackable {
     @Unique
     int shieldDashCoolDown = 0;
 
-    public ShieldDashMixin(EntityType<?> type, World world) {
+    public ShieldDashMixinClient(EntityType<?> type, World world) {
         super(type, world);
     }
 
@@ -78,22 +78,6 @@ public abstract class ShieldDashMixin extends Entity implements Attackable {
 //            System.out.println(shieldDashCoolDown);
 
             sentC2S();
-        }
-        if(this.isPlayer() && isBlocking()) {//盾牌猛击造成伤害和击退部分
-            if(checkPlayerCollisions((PlayerEntity) (Object) this) != null) {
-                Entity entity = checkPlayerCollisions((PlayerEntity) (Object) this);
-//                System.out.println(ShieldDashMixinHelper.getHitCoolDown(this.getId()));
-                if(ShieldDashMixinHelper.getHitCoolDown(this.getId())>=15) {//盾牌冲刺中
-                    Vec3d playerLookDirection = this.getRotationVector().normalize();
-                    playerLookDirection = new Vec3d(playerLookDirection.x, 0, playerLookDirection.z).normalize();
-                    double speed = 0.5;
-                    // 乘以速度系数
-                    Vec3d upVector = new Vec3d(0, 0.1, 0);
-                    playerLookDirection = playerLookDirection.multiply(speed).add(upVector);
-                    entity.damage(getDamageSources().playerAttack((PlayerEntity) (Object) this),5f);
-                    entity.addVelocity(playerLookDirection);
-                }
-            }
         }
     }
 
