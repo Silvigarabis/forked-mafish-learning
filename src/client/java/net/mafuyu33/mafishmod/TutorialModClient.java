@@ -14,8 +14,6 @@ import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.mafuyu33.mafishmod.event.*;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
-import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.mafuyu33.mafishmod.particle.ParticleStorageClient;
 
 import net.mafuyu33.mafishmod.particle.ModParticles;
@@ -30,7 +28,6 @@ import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 
 public class TutorialModClient implements ClientModInitializer {
     @Override
@@ -42,13 +39,11 @@ public class TutorialModClient implements ClientModInitializer {
 
         ParticleStorageClient.init();
 
-        addRegistries();
-        registerEvents();
+        addClientRegistries();
+        registerClientEvents();
     }
 
-    private static void addRegistries(){
-        FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUEITE,200);
-
+    private static void addClientRegistries(){
         EntityRendererRegistry.register(ModEntities.TNT_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.STONE_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.FU_PROJECTILE, FlyingItemEntityRenderer::new);
@@ -64,15 +59,11 @@ public class TutorialModClient implements ClientModInitializer {
 
         HandledScreens.register(ModScreenHandlers.GEM_POLISHING_SCREEN_HANDLER, GemPolishingScreen::new);
     }
-    private static void registerEvents(){
+    private static void registerClientEvents(){
         KeyInputHandler.register();
         ChatMessageHandler.register();
         AttackKeyCheckHandler.registerAttackKeyListener();
         HudRenderCallback.EVENT.register(new ALeaf());
-        AttackEntityCallback.EVENT.register(new AttackEntityHandler());
-        PlayerBlockBreakEvents.AFTER.register(new AfterBlockBreakHandler());
-        PlayerBlockBreakEvents.BEFORE.register(new BeforeBlockBreakHandler());
-        ExplosionHandler.init();
         ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {//客户端已经成功连接到服务器
             // 调用您的方法
             StateSaverAndLoader.getServerState(client.getServer()).spawnAllParticles(client.world,client.getServer());

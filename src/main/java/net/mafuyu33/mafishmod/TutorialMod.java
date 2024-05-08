@@ -18,6 +18,12 @@ import net.mafuyu33.mafishmod.enchantment.ModEnchantments;
 import net.mafuyu33.mafishmod.util.ModCustomTrades;
 import net.mafuyu33.mafishmod.util.ModLootTableModifiers;
 
+import net.fabricmc.fabric.api.registry.FuelRegistry;
+
+import net.mafuyu33.mafishmod.event.*;
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,8 +58,19 @@ public class TutorialMod implements ModInitializer {
         ModVillagers.registerVillagers();
             // partially require ModBlocks (ModBlocks.WHATE_CAT_BLOCK)
 
+        addRegistries();
+
         //VR
         VRPlugin.init();
 
+    }
+    private void addRegistries(){
+        FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUEITE,200);
+    }
+    private void addEvents(){
+        AttackEntityCallback.EVENT.register(new AttackEntityHandler());
+        PlayerBlockBreakEvents.BEFORE.register(new BeforeBlockBreakHandler());
+        PlayerBlockBreakEvents.AFTER.register(new AfterBlockBreakHandler());
+        ExplosionHandler.init();
     }
 }
